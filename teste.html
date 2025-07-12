@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mini CrazyGames SPA</title>
+    <style>
+        .tela {
+            display: none;
+        }
+
+        .ativa {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Tela 1: Home (Galeria de Jogos) -->
+    <div id="home" class="tela ativa">
+        <h1>🏠 Home - Galeria de Jogos</h1>
+        <button onclick="abrirJogo('jogo1')">Abrir Jogo 1</button>
+        <button onclick="abrirBusca()">Ir para Busca</button>
+    </div>
+
+    <!-- Tela 2: Página do Jogo -->
+    <div id="paginaJogo" class="tela">
+        <h1>🎮 Página do Jogo</h1>
+        <iframe id="iframeJogo" width="600" height="400"></iframe>
+        <br>
+        <button onclick="voltarHome()">Voltar para Home</button>
+    </div>
+
+    <!-- Tela 3: Busca -->
+    <div id="busca" class="tela">
+        <h1>🔎 Tela de Busca</h1>
+        <p>Resultados da busca aparecem aqui...</p>
+        <button onclick="voltarHome()">Voltar para Home</button>
+    </div>
+
+    <script>
+        function mostrarTela(telaId) {
+            // Esconde todas as telas
+            document.querySelectorAll('.tela').forEach(div => div.classList.remove('ativa'));
+            // Mostra só a tela desejada
+            document.getElementById(telaId).classList.add('ativa');
+        }
+
+        function abrirJogo(idDoJogo) {
+            mostrarTela('paginaJogo');
+            const iframe = document.getElementById('iframeJogo');
+            if (idDoJogo === 'jogo1') {
+                iframe.src = 'https://exemplo.com/jogo1';  // Coloque aqui o link real do seu jogo
+            }
+            history.pushState({}, '', '/game/' + idDoJogo);
+        }
+
+        function abrirBusca() {
+            mostrarTela('busca');
+            history.pushState({}, '', '/busca');
+        }
+
+        function voltarHome() {
+            mostrarTela('home');
+            history.pushState({}, '', '/home');
+        }
+
+        // Controle do botão "Voltar" do navegador
+        window.onpopstate = function () {
+            const path = window.location.pathname;
+            if (path.startsWith('/game/')) {
+                mostrarTela('paginaJogo');
+            } else if (path === '/busca') {
+                mostrarTela('busca');
+            } else {
+                mostrarTela('home');
+            }
+        };
+    </script>
+
+</body>
+
+</html>
