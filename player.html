@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Obby Survive Parkour</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+20&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <a href="index.html" aria-label="Página inicial REFGAMES">
+            <img src="./assets/icons/ref.png" alt="Logotipo do REFGAMES" id="img-logo">
+        </a>
+
+        <form id="barra-pesquisa" action="#" method="get">
+            <span id="icon-lupa" class="icone-lupa"><i class="fas fa-search"></i></span>
+            <input id="search" type="text" placeholder="Buscar jogos..." name="search" aria-label="Campo de busca">
+        </form>
+
+        <nav id="navegacao-menu" aria-label="Menu de categorias">
+            <ul>
+                <li class="dropdown">
+                    <button class="botao-categorias dropdown-btn" type="button" id="botao-categorias"
+                        aria-haspopup="true" aria-expanded="false">
+                        <span id="icon-categoria">
+                            <img src="assets/icons/trofeu 1.png" alt="Ícone de troféu" class="icon-drop">
+                        </span>
+                        <span id="texto-categoria">
+                            CATEGORIES</span>
+                        <img src="assets/icons/seta.png" alt="Ícone de seta para abrir o menu" class="icon-seta">
+                    </button>
+
+                    <div class="dropdown-menu" role="menu">
+                        <a href="#" data-categoria="2 PLAYER"><i class="fas fa-users"></i> 2 PLAYER</a>
+                        <a href="#" data-categoria="ADVENTURE"><i class="fas fa-hat-wizard"></i> ADVENTURE</a>
+                        <a href="#" data-categoria="CASUAL"><i class="fas fa-star"></i> CASUAL</a>
+                        <a href="#" data-categoria="RACING"><i class="fas fa-car"></i> RACING</a>
+                        <a href="#" data-categoria="MULTIPLAYER"><i class="fas fa-gamepad"></i> MULTIPLAYER</a>
+                        <a href="#" data-categoria="FPS"><i class="fas fa-crosshairs"></i> FPS</a>
+                        <a href="#" data-categoria="BATTLE"><i class="fas fa-fire"></i> BATTLE</a>
+                        <a href="#" data-categoria="TERROR"><i class="fas fa-ghost"></i> TERROR</a>
+                        <a href="#" data-categoria="ART"><i class="fas fa-paint-brush"></i> ART</a>
+                        <a href="#" data-categoria="SPORTS"><i class="fas fa-futbol"></i> SPORTS</a>
+                        <a href="#" data-categoria="PARKOUR"><i class="fas fa-running"></i> PARKOUR</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="game-screen">
+
+        <!-- Anúncio esquerdo -->
+        <aside class="ads-left">
+            <!-- Aqui você pode colocar um script de anúncio ou imagem -->
+            <div class="ad-box">Anúncio Lateral</div>
+        </aside>
+
+        <!-- Container principal do jogo -->
+        <main class="game-container">
+
+            <!-- PLAYER isolado: mesmo visual, agora em sua própria div -->
+            <div class="player">
+                <iframe id="game-frame" src="" allowfullscreen></iframe>
+            </div>
+
+
+            <div class="game-controls">
+                <div class="logo">
+                    <img id="game-thumb" src="assets/games/image1.jpg" alt="Thumbnail do jogo">
+                    <h1 id="game-title">Título do Game</h1>
+                </div>
+                <div class="button">
+                    <button id="btn-full" title="Tela cheia"><i class="fas fa-expand"></i></button>
+
+
+                </div>
+            </div>
+
+            <div id="aviso" class="aviso">🔁 Clique no jogo para ativar os controles</div>
+
+
+            <div class="game-zone">
+                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
+                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
+                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
+                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
+                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
+                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
+                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
+                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
+            </div>
+
+            <div class="game-zone">
+                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
+                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
+                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
+                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
+                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
+                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
+                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
+                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
+            </div>
+            <div class="game-zone">
+                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
+                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
+                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
+                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
+                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
+                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
+                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
+                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
+            </div>
+
+            <!-- Seção abaixo do player: título, descrição e cards -->
+            <section class="game-info">
+
+                <p id="game-description" class="game-description">Carregando descrição do jogo...</p>
+                <p id="game-instruction" class="game-instruction">Carregando instruções do jogo...</p>
+
+                <div id="related-games" class="related-games">
+                    <!-- Cards de jogos relacionados serão inseridos dinamicamente aqui -->
+                </div>
+            </section>
+
+        </main>
+
+
+
+        <!-- Anúncio direito -->
+        <aside class="ads-right">
+            <div class="ad-box">Anúncio Lateral</div>
+        </aside>
+
+    </div>
+
+
+
+</body>
+
+<script src="scripts2.js"></script>
+
+</html>
