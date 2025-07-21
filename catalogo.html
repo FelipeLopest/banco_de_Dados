@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jogos por Categoria</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        .grid-jogos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.25rem;
+            /* espaço entre imagens */
+            justify-content: center;
+            padding: 1rem 2rem;
+        }
+
+        /* Link do jogo (apenas imagem clicável) */
+        .item-jogo {
+            flex: 1 1 calc(20% - 1.25rem);
+            /* 5 por linha com gap */
+            max-width: 160px;
+            display: block;
+            cursor: pointer;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .item-jogo img {
+            width: 100%;
+            height: auto;
+            background-color: red;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgb(0 0 0 / 0.15);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .item-jogo:hover img,
+        .item-jogo:focus img {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgb(0 0 0 / 0.3);
+        }
+
+        /* Título da categoria */
+        #titulo-categoria {
+            text-align: center;
+            font-size: 2rem;
+            margin: 2rem 0 1rem;
+            font-weight: 700;
+            font-family: 'Jersey 20', sans-serif;
+        }
+
+        /* Estilo da paginação */
+        #paginacao {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        #paginacao button {
+            margin: 0 5px;
+            padding: 8px 14px;
+            border: 1px solid #333;
+            background-color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        #paginacao button.active,
+        #paginacao button:hover {
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="dropdown">
+            <button class="dropdown-btn">
+                <span id="icon-categoria"></span>
+                <span id="texto-categoria">Categoria</span>
+            </button>
+            <div class="dropdown-menu">
+                <a href="#" data-categoria="twoplayer"><i>🎮</i> Multiplayer</a>
+                <a href="#" data-categoria="singleplayer"><i>👤</i> Singleplayer</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h1 id="titulo-categoria">Jogos</h1>
+        <div id="lista-jogos" class="grid-jogos"></div>
+        <div id="paginacao"></div>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const categoria = urlParams.get("categoria")?.toLowerCase();
+
+            const lista = document.getElementById("lista-jogos");
+            const titulo = document.getElementById("titulo-categoria");
+            const paginacao = document.getElementById("paginacao");
+
+            if (!categoria) {
+                titulo.textContent = "Categoria não especificada.";
+                return;
+            }
+
+            fetch("jogos.json")
+                .then(response => response.json())
+                .then(jogos => {
+                    const jogosFiltrados = jogos.filter(j =>
+                        j.categoria?.toLowerCase() === categoria
+                    );
+
+                    titulo.textContent = `Jogos da categoria: ${categoria}`;
+
+                    if (jogosFiltrados.length === 0) {
+                        lista.innerHTML = "<p>Nenhum jogo encontrado nesta categoria.</p>";
+                        paginacao.innerHTML = "";
+                        return;
+                    }
+
+                    const jogosPorPagina = 30;
+                    let paginaAtual = 1;
+                    const totalPaginas = Math.ceil(jogosFiltrados.length / jogosPorPagina);
+                    function mostrarPagina(pagina) {
+                        paginaAtual = pagina;
+                        lista.innerHTML = "";
+
+                        const inicio = (paginaAtual - 1) * jogosPorPagina;
+                        const fim = inicio + jogosPorPagina;
+                        const jogosPagina = jogosFiltrados.slice(inicio, fim);
+
+                        jogosPagina.forEach(jogo => {
+                            const a = document.createElement("a");
+                            a.href = `player.html?jogo=${encodeURIComponent(jogo.id)}`;
+                            a.className = "item-jogo";
+                            a.title = jogo.nome;
+                            a.innerHTML = `<img src="${jogo.imagem}" alt="${jogo.nome}">`;
+                            lista.appendChild(a);
+                        });
+
+                        atualizarPaginacao();
+                    }
+
+                    function atualizarPaginacao() {
+                        paginacao.innerHTML = "";
+
+                        for (let i = 1; i <= totalPaginas; i++) {
+                            const btn = document.createElement("button");
+                            btn.textContent = i;
+                            if (i === paginaAtual) btn.classList.add("active");
+
+                            btn.addEventListener("click", () => mostrarPagina(i));
+
+                            paginacao.appendChild(btn);
+                        }
+                    }
+
+                    mostrarPagina(1);
+                })
+                .catch(err => {
+                    console.error("Erro ao carregar jogos:", err);
+                    lista.innerHTML = "<p>Erro ao carregar os jogos.</p>";
+                    paginacao.innerHTML = "";
+                });
+        });
+    </script>
+</body>
+
+</html>

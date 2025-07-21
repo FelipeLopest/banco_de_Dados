@@ -38,85 +38,61 @@ if (!isPlayerPage) {
 
     // Carrossel múltiplo
     document.addEventListener("DOMContentLoaded", function () {
-        const carousel = document.querySelector(".carousel-container");
-        const track = carousel.querySelector(".carousel-track");
-        const nextBtn = carousel.querySelector(".nextBtn");
-        const prevBtn = carousel.querySelector(".prevBtn");
-
-        let currentIndex = 0;
-        let cardsPerView = 7;
-        let cardWidth = 0;
-        let totalCards = 0;
-
         fetch('./jogos.json')
             .then(response => response.json())
             .then(jogos => {
-                track.innerHTML = '';
-
-                // Filtra apenas jogos da categoria 'twoplayer'
-                const jogos2Player = jogos.filter(jogo =>
-                    jogo.categoria && jogo.categoria.trim().toLowerCase() === "twoplayer"
-                );
-
-                // Pega os 13 primeiros jogos da categoria
-                const jogosParaCarrossel = jogos2Player.slice(0, 13);
-
-                // Cria os cards dos jogos
-                jogosParaCarrossel.forEach(jogo => {
-                    const card = document.createElement('a');
-                    card.className = 'card';
-                    card.href = `player.html?jogo=${encodeURIComponent(jogo.id || '')}`;
-                    card.setAttribute('data-id', jogo.id || '');
-                    card.innerHTML = `<img class="jogo" src="${jogo.imagem}" alt="${jogo.nome || 'Jogo'}">`;
-                    track.appendChild(card);
-                });
-
-                // Adiciona o card "Ver Mais" com a categoria na URL
-                const verMais = document.createElement('a');
-                verMais.className = 'card ver-mais';
-                verMais.href = `todos-jogos.html?categoria=${encodeURIComponent("twoplayer")}`;
-                verMais.innerHTML = `
-                <div style=".card{
-                    display: flex;
-                    justify-content: center;
-                   
-                    font-weight: bold;
-                    font-size: 1.2rem;
-                    color: #fff;
-                    text-transform: uppercase;
-            }">Ver Mais</div>`
-                    ;
-                track.appendChild(verMais);
-
-                totalCards = track.querySelectorAll('.card').length; // Deve ser 14
-                initCarousel();
+                // Inicializa carrossel para 'twoplayer'
+                initCarouselByCategory(jogos, 'carousel-twoplayer', 'twoplayer', 13, 7);
+                // Inicializa carrossel para 'singleplayer' (vai ficar vazio se não houver jogos nessa categoria)
+                initCarouselByCategory(jogos, 'carousel-singleplayer', 'singleplayer', 13, 7);
             })
             .catch(err => console.error('Erro ao carregar JSON:', err));
 
-        function initCarousel() {
+        function initCarouselByCategory(jogos, sectionId, categoriaFiltro, maxJogos = 13, cardsPerView = 7) {
+            const section = document.getElementById(sectionId);
+            if (!section) return;
+
+            const carousel = section.querySelector(".carousel-container");
+            const track = carousel.querySelector(".carousel-track");
+            const nextBtn = carousel.querySelector(".nextBtn");
+            const prevBtn = carousel.querySelector(".prevBtn");
+
+            // Filtra jogos da categoria
+            const jogosFiltrados = jogos.filter(jogo =>
+                jogo.categoria && jogo.categoria.trim().toLowerCase() === categoriaFiltro.toLowerCase()
+            );
+
+            const jogosParaCarrossel = jogosFiltrados.slice(0, maxJogos);
+            track.innerHTML = '';
+
+            jogosParaCarrossel.forEach(jogo => {
+                const card = document.createElement('a');
+                card.className = 'card';
+                card.href = `player.html?jogo=${encodeURIComponent(jogo.id || '')}`;
+                card.setAttribute('data-id', jogo.id || '');
+                card.innerHTML = `<img class="jogo" src="${encodeURI(jogo.imagem)}" alt="${jogo.nome || 'Jogo'}">`;
+                track.appendChild(card);
+            });
+
+            // Card "Ver Mais"
+            const verMais = document.createElement('a');
+            verMais.className = 'card ver-mais';
+            verMais.href = `todos-jogos.html?categoria=${encodeURIComponent(categoriaFiltro)}`;
+            verMais.textContent = 'Ver Mais';
+            track.appendChild(verMais);
+
+            const totalCards = track.querySelectorAll('.card').length;
+            initCarouselUI(carousel, track, prevBtn, nextBtn, totalCards, cardsPerView);
+        }
+
+        function initCarouselUI(carousel, track, prevBtn, nextBtn, totalCards, cardsPerView) {
+            let currentIndex = 0;
             const card = track.querySelector('.card');
             if (!card) return;
 
             const style = getComputedStyle(card);
             const marginRight = parseInt(style.marginRight) || 0;
-            cardWidth = card.offsetWidth + marginRight;
-
-            currentIndex = 0;
-            updateCarousel();
-
-            nextBtn.addEventListener('click', () => {
-                if (currentIndex + cardsPerView < totalCards) {
-                    currentIndex += cardsPerView;
-                    updateCarousel();
-                }
-            });
-
-            prevBtn.addEventListener('click', () => {
-                if (currentIndex > 0) {
-                    currentIndex -= cardsPerView;
-                    updateCarousel();
-                }
-            });
+            const cardWidth = card.offsetWidth + marginRight;
 
             function updateCarousel() {
                 const maxIndex = totalCards - cardsPerView;
@@ -128,8 +104,25 @@ if (!isPlayerPage) {
                 prevBtn.disabled = currentIndex === 0;
                 nextBtn.disabled = currentIndex >= maxIndex;
             }
+
+            prevBtn.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex -= cardsPerView;
+                    updateCarousel();
+                }
+            });
+
+            nextBtn.addEventListener('click', () => {
+                if (currentIndex + cardsPerView < totalCards) {
+                    currentIndex += cardsPerView;
+                    updateCarousel();
+                }
+            });
+
+            updateCarousel();
         }
     });
+
 
     // Carregar destaque e linhas laterais
     fetch('jogos.json')

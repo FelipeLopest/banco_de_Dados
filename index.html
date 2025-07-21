@@ -20,7 +20,9 @@
 
         <form id="barra-pesquisa" action="#" method="get">
             <span id="icon-lupa" class="icone-lupa"><i class="fas fa-search"></i></span>
-            <input id="search" type="text" placeholder="Buscar jogos..." name="search" aria-label="Campo de busca">
+            <input id="search" type="text" placeholder="Buscar jogos..." name="search" aria-label="Campo de busca"
+                autocomplete="off">
+
         </form>
 
         <nav id="navegacao-menu" aria-label="Menu de categorias">
@@ -59,9 +61,7 @@
 
     <main>
         <div id="main-content"></div>
-        <section class="mais">
-            <h1 class="adventure">Destaques</h1>
-        </section>
+
 
         <section>
             <h1 class="mais">Destaques</h1>
@@ -88,30 +88,27 @@
             <h1>2 player</h1>
             <p>View More</p>
         </div>
-        <section class="new">
+        <section class="new" id="carousel-twoplayer">
             <div class="carousel-container">
                 <button class="arrow arrow-left prevBtn">&#8592;</button>
-
-                <div class="carousel-track">
-                    <!-- Cards vão ser inseridos aqui via JS -->
-                </div>
-
+                <div class="carousel-track"></div>
                 <button class="arrow arrow-right nextBtn">&#8594;</button>
             </div>
         </section>
 
+        <div class="mais">
+            <h1>Single Player</h1>
+            <p>View More</p>
         </div>
-        <div id="game-screen" style="display:none;">
-            <div class="player-container">
-                <iframe id="game-iframe" src="" frameborder="0" allowfullscreen></iframe>
-                <div class="player-controls">
-                    <button id="zoom-in">Zoom +</button>
-                    <button id="zoom-out">Zoom -</button>
-                    <button id="toggle-sound">Som On/Off</button>
-                    <button id="close-game">Fechar Jogo</button>
-                </div>
+        <section class="new" id="carousel-singleplayer">
+            <div class="carousel-container">
+                <button class="arrow arrow-left prevBtn">&#8592;</button>
+                <div class="carousel-track"></div>
+                <button class="arrow arrow-right nextBtn">&#8594;</button>
             </div>
-        </div>
+        </section>
+
+
     </main>
     <footer class="site-footer">
         <div class="footer-content">
@@ -140,7 +137,7 @@
 
 </body>
 
-<script src="scripts2.js"></script>
+<script src="index.js"></script>
 
 
 </html>
