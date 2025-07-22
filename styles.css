@@ -15,6 +15,7 @@ body {
     overflow-x: hidden;
     height: 100%;
 
+
 }
 
 
@@ -76,6 +77,8 @@ form {
 /* Dropdown */
 .dropdown {
     position: relative;
+    z-index: 999;
+    /* garantir que esteja acima de outros elementos */
 }
 
 .dropdown-menu {
@@ -90,6 +93,8 @@ form {
     min-width: 89%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     z-index: 100;
+    min-height: 150px;
+
 }
 
 .dropdown-menu.show {
@@ -110,6 +115,8 @@ form {
 .dropdown-menu a:hover {
     background-color: #050451;
 }
+
+
 
 /* ----------------------- BOTÃO DE CATEGORIAS ----------------------- */
 .botao-categorias {
@@ -150,16 +157,13 @@ form {
     color: blue;
 }
 
-.fa-hat-wizard {
-    color: rgb(170, 6, 215);
-}
 
 .fa-star {
     color: yellow;
 }
 
 .fa-car {
-    color: rgba(38, 155, 14, 0.896);
+    color: rgba(219, 18, 18, 0.896);
 }
 
 .fa-gamepad {
@@ -167,7 +171,7 @@ form {
 }
 
 .fa-crosshairs {
-    color: rgb(126, 125, 125);
+    color: rgb(232, 206, 12);
 }
 
 .fa-fire {
@@ -184,6 +188,26 @@ form {
 
 .fa-running {
     color: antiquewhite;
+}
+
+.fa-ghost {
+    color: rgb(170, 6, 215);
+}
+
+.fa-bicycle {
+    color: #1800ca;
+}
+
+.fa-hand-fist {
+    color: rgb(244, 229, 162);
+}
+
+.fa-bolt {
+    color: orange;
+}
+
+.fa-people-group {
+    color: #0dc0d7;
 }
 
 /* ----------------------- LISTA PADRÃO ----------------------- */
@@ -262,73 +286,53 @@ li {
 .arrow {
     position: absolute;
     top: 50%;
-    width: 30px;
-    height: 150px;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
+    width: 45px;
+    height: 100px;
+    background: rgba(39, 38, 38, 0.4);
     border: none;
     color: white;
-    font-size: 1rem;
-    padding: 10px 15px;
+    font-size: 1.5rem;
     cursor: pointer;
-
-    user-select: none;
-    z-index: 5;
-    transition: background-color 0.3s;
-}
-
-
-
-
-
-/* Alinhamento lateral exato das setas */
-.arrow-left {
-    padding-left: 5px;
-    /* diminua o padding para a esquerda */
-    padding-right: 15px;
-    /* mantenha espaçamento à direita */
-
-}
-
-.arrow-right {
-    text-align: right;
-    /* texto alinhado à direita */
-    padding-right: 10px;
-    /* diminua para aproximar */
-    padding-left: 10px;
-    /* mantenha ou aumente para afastar da esquerda */
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
+    border-radius: 6px;
+    /* deixe 0px se quiser cantos retos */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
 }
 
 .arrow:hover:not(:disabled) {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(51, 50, 50, 0.7);
+    transform: translateY(-50%) scale(1.05);
 }
 
 .arrow:disabled {
-    opacity: 0.3;
+    opacity: 0 !important;
+    pointer-events: none !important;
     cursor: default;
 }
 
-.carousel-container .arrow {
-    opacity: 0;
-    pointer-events: none;
-    /* bloqueia clique e hover quando oculto */
-    transition: opacity 0.3s ease;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
+/* Posicionamento lateral */
+.arrow-left {
+    left: 10px;
 }
 
-.carousel-container:hover .arrow {
+.arrow-right {
+    right: 10px;
+}
+
+/* Aparecem apenas no hover */
+.carousel-container:hover .arrow:not(:disabled) {
     opacity: 1;
     pointer-events: auto;
-    /* permite interação */
 }
+
+
 
 /* Destaques*/
 
@@ -338,8 +342,18 @@ li {
     display: flex;
     gap: 20px;
     max-width: 1500px;
+    padding: 5px 10px 5px;
+
 
 }
+
+.titulo-des {
+    color: white;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+
 
 
 .container img {
@@ -436,6 +450,8 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    min-height: 500px;
+
 }
 
 
@@ -445,8 +461,8 @@ main {
     width: 100%;
     max-width: 1500px;
     color: white;
-    margin-top: 10px;
-    /* ou o mesmo que o carousel-container */
+    margin: 10px
+        /* ou o mesmo que o carousel-container */
 
 }
 
@@ -756,4 +772,79 @@ li {
 .game-zone img {
     width: 100%;
 
+}
+
+/*catalogo */
+
+.grid-jogos {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    /* 5 cards por linha */
+    gap: 20px;
+    padding: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.grid-jogos a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: #1e1e1e;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.grid-jogos img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.grid-jogos a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+.grid-jogos a:hover img {
+    transform: scale(1.05);
+}
+
+#titulo-categoria {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 20px;
+    color: #fff;
+    font-weight: bold;
+}
+
+#paginacao {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 30px auto;
+    max-width: 600px;
+}
+
+#paginacao button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#paginacao button:hover,
+#paginacao button.active {
+    background-color: #555;
 }

@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
             dropdownMenu.classList.remove('show');
 
             const categoriaURL = categoria.toLowerCase().replace(/\s+/g, '');
-            window.location.href = `jogos.html?categoria=${encodeURIComponent(categoriaURL)}`;
+            window.location.href = `catalogo.html?categoria=${encodeURIComponent(categoriaURL)}`;
         });
     });
 
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
     resultsContainer.style.backgroundColor = '#06016c';
     resultsContainer.style.color = 'white';
     resultsContainer.style.width = '400px'; // largura menor, ajuste o valor que quiser
-    resultsContainer.style.maxHeight = '300px';
+    resultsContainer.style.maxHeight = '500px';
     resultsContainer.style.overflowY = 'auto';
     resultsContainer.style.borderRadius = '8px';
     resultsContainer.style.top = (searchInput.offsetTop + searchInput.offsetHeight) + 'px';
@@ -129,18 +129,18 @@ document.addEventListener("DOMContentLoaded", () => {
     searchInput.addEventListener('input', () => {
         const texto = searchInput.value.trim().toLowerCase();
         if (texto.length < 1) {
-            resultsContainer.style.display = 'none';  // Esconde se vazio
+            resultsContainer.style.display = 'none';
             return;
         }
 
-        // Busca parcial, case insensitive no nome do jogo
         const resultados = jogosCache.filter(jogo =>
-            jogo.nome.toLowerCase().includes(texto)
+            jogo.nome.toLowerCase().startsWith(texto)
         );
 
-        mostrarResultados(resultados.slice(0, 10)); // Limite 10 resultados para dropdown
-    });
 
+
+        mostrarResultados(resultados.slice(0, 10));
+    });
     // Esconde resultados ao clicar fora
     document.addEventListener('click', (e) => {
         if (!searchForm.contains(e.target)) {

@@ -11,7 +11,7 @@
     {
         "id": "obbysurvive",
         "nome": "Obby Parkour",
-        "imagem": "assets/images-games/Obby Parkour-512x512.jpg",
+        "imagem": "assets/images-games/Duck Shift-512x512.jpg",
         "linkIframe": "https://example.com/jogo/obbysurvive/index.html",
         "descricao": "Corra e salte pelas plataformas!",
         "instrucoes": "Use as setas para correr e espaço para pular.",
