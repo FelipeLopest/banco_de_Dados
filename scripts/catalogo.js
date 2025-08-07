@@ -1,24 +1,40 @@
 document.addEventListener("DOMContentLoaded", () => {
     const urlParams = new URLSearchParams(window.location.search);
-    const categoria = urlParams.get("categoria")?.toLowerCase();
+    let categoriaParam = urlParams.get("categoria");
+
+    // Camada de segurança: limpar caracteres suspeitos
+    if (categoriaParam) {
+        categoriaParam = categoriaParam.toLowerCase().replace(/[^a-z0-9\s]/g, "");
+    }
 
     const lista = document.getElementById("lista-jogos");
     const titulo = document.getElementById("titulo-categoria");
     const paginacao = document.getElementById("paginacao");
 
-    if (!categoria) {
+    if (!categoriaParam) {
         titulo.textContent = "Categoria não especificada.";
         return;
     }
 
     fetch("jogos.json")
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) throw new Error("Erro ao carregar JSON");
+            return response.json();
+        })
         .then(jogos => {
-            const jogosFiltrados = jogos.filter(j =>
-                j.categoria?.toLowerCase() === categoria
-            );
+            // Camada de segurança: verificar estrutura
+            if (!Array.isArray(jogos)) throw new Error("JSON inválido");
 
-            titulo.textContent = ` ${categoria}`;
+            const jogosFiltrados = jogos.filter(j => {
+                if (!Array.isArray(j.categoria)) return false;
+                return j.categoria.some(cat => {
+                    if (typeof cat !== "string") return false;
+                    return cat.toLowerCase().replace(/\s+/g, "") === categoriaParam.replace(/\s+/g, "");
+                });
+            });
+
+            // Aqui aplicamos a capitalização em todas as palavras
+            titulo.textContent = capitalizeWords(decodeURIComponent(categoriaParam));
 
             if (jogosFiltrados.length === 0) {
                 lista.innerHTML = "<p>Nenhum jogo encontrado nesta categoria.</p>";
@@ -33,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
             function mostrarPagina(pagina) {
                 paginaAtual = pagina;
                 lista.innerHTML = "";
-                lista.classList.add("grid-jogos"); // garante que sempre tenha a classe
+                lista.classList.add("grid-jogos");
 
                 const inicio = (paginaAtual - 1) * jogosPorPagina;
                 const fim = inicio + jogosPorPagina;
@@ -44,25 +60,21 @@ document.addEventListener("DOMContentLoaded", () => {
                     a.href = `player.html?jogo=${encodeURIComponent(jogo.id)}`;
                     a.className = "item-jogo";
                     a.title = jogo.nome;
-                    a.innerHTML = `<img src="${jogo.imagem}" alt="${jogo.nome}">`;
+                    a.innerHTML = `<img src="${sanitize(jogo.imagem)}" alt="${sanitize(jogo.nome)}">`;
                     lista.appendChild(a);
                 });
 
                 atualizarPaginacao();
             }
 
-
             function atualizarPaginacao() {
                 paginacao.innerHTML = "";
-
                 for (let i = 1; i <= totalPaginas; i++) {
                     const btn = document.createElement("button");
                     btn.textContent = i;
                     btn.className = "botao-pagina";
                     if (i === paginaAtual) btn.classList.add("active");
-
                     btn.addEventListener("click", () => mostrarPagina(i));
-
                     paginacao.appendChild(btn);
                 }
             }
@@ -74,6 +86,23 @@ document.addEventListener("DOMContentLoaded", () => {
             lista.innerHTML = "<p>Erro ao carregar os jogos.</p>";
             paginacao.innerHTML = "";
         });
+
+    // Sanitização contra XSS
+    function sanitize(str) {
+        return String(str)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;");
+    }
+
+    // Função para capitalizar todas as palavras
+    function capitalizeWords(str) {
+        if (typeof str !== 'string' || str.length === 0) return '';
+        return str.split(' ').map(word => {
+            return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+        }).join(' ');
+    }
 
     // Dropdown menu
     const dropdownBtn = document.querySelector('.dropdown-btn');
@@ -91,7 +120,6 @@ document.addEventListener("DOMContentLoaded", () => {
             iconCategoria.innerHTML = '';
             iconCategoria.appendChild(icone);
             dropdownMenu.classList.remove('show');
-
             const categoriaURL = categoria.toLowerCase().replace(/\s+/g, '');
             window.location.href = `catalogo.html?categoria=${encodeURIComponent(categoriaURL)}`;
         });
@@ -108,27 +136,29 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // --- Barra de pesquisa ---
+    // Barra de pesquisa
     const searchInput = document.getElementById('search');
     const searchForm = document.getElementById('barra-pesquisa');
 
     const resultsContainer = document.createElement('div');
-    resultsContainer.style.position = 'absolute';
-    resultsContainer.style.backgroundColor = '#06016c';
-    resultsContainer.style.color = 'white';
-    resultsContainer.style.width = '400px';
-    resultsContainer.style.maxHeight = '300px';
-    resultsContainer.style.overflowY = 'auto';
-    resultsContainer.style.borderRadius = '8px';
-    resultsContainer.style.top = (searchInput.offsetTop + searchInput.offsetHeight) + 'px';
-    resultsContainer.style.left = '50%';
-    resultsContainer.style.transform = 'translateX(-50%)';
-    resultsContainer.style.zIndex = '1000';
-    resultsContainer.style.display = 'none';
-    resultsContainer.style.padding = '8px 10px';
-    resultsContainer.style.boxShadow = '0 4px 10px rgba(0,0,0,0.5)';
-    resultsContainer.style.flexWrap = 'wrap';
-    resultsContainer.style.gap = '8px';
+    Object.assign(resultsContainer.style, {
+        position: 'absolute',
+        backgroundColor: '#06016c',
+        color: 'white',
+        width: '400px',
+        maxHeight: '300px',
+        overflowY: 'auto',
+        borderRadius: '8px',
+        top: (searchInput.offsetTop + searchInput.offsetHeight) + 'px',
+        left: '50%',
+        transform: 'translateX(-50%)',
+        zIndex: '1000',
+        display: 'none',
+        padding: '8px 10px',
+        boxShadow: '0 4px 10px rgba(0,0,0,0.5)',
+        flexWrap: 'wrap',
+        gap: '8px'
+    });
 
     searchForm.style.position = 'relative';
     searchForm.appendChild(resultsContainer);
@@ -136,7 +166,10 @@ document.addEventListener("DOMContentLoaded", () => {
     let jogosCache = [];
 
     fetch('jogos.json')
-        .then(res => res.json())
+        .then(res => {
+            if (!res.ok) throw new Error('Erro ao carregar jogos');
+            return res.json();
+        })
         .then(data => {
             jogosCache = data;
         })
@@ -155,40 +188,32 @@ document.addEventListener("DOMContentLoaded", () => {
             const item = document.createElement('a');
             item.href = `player.html?jogo=${encodeURIComponent(jogo.id)}`;
             item.title = jogo.nome;
-            item.style.display = 'inline-block';
-            item.style.width = '120px';
-            item.style.height = '70px';
-            item.style.borderRadius = '8px';
-            item.style.overflow = 'hidden';
-            item.style.boxShadow = '0 3px 6px rgba(0,0,0,0.15)';
-            item.style.transition = 'transform 0.25s ease';
-            item.style.cursor = 'pointer';
+            Object.assign(item.style, {
+                display: 'inline-block',
+                width: '120px',
+                height: '70px',
+                borderRadius: '8px',
+                overflow: 'hidden',
+                boxShadow: '0 3px 6px rgba(0,0,0,0.15)',
+                transition: 'transform 0.25s ease',
+                cursor: 'pointer'
+            });
 
             const img = document.createElement('img');
             img.src = jogo.imagem;
             img.alt = jogo.nome;
-            img.style.width = '100%';
-            img.style.height = '100%';
-            img.style.objectFit = 'cover';
-            img.style.display = 'block';
+            Object.assign(img.style, {
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                display: 'block'
+            });
 
             item.appendChild(img);
-
             item.addEventListener('mouseenter', () => item.style.transform = 'scale(1.05)');
             item.addEventListener('mouseleave', () => item.style.transform = 'scale(1)');
 
             resultsContainer.appendChild(item);
-        });
-
-        searchInput.addEventListener("keydown", function (e) {
-            if (e.key === "Enter") {
-                e.preventDefault();
-            }
-        });
-
-        const form = document.getElementById("barra-pesquisa");
-        form.addEventListener("submit", function (e) {
-            e.preventDefault();
         });
 
         resultsContainer.style.display = 'flex';

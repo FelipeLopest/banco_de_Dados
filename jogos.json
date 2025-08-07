@@ -1,182 +1,74 @@
 [
     {
-        "id": "duckshift",
-        "nome": "Duck Shift",
-        "imagem": "assets/images-games/Duck Shift-512x512.jpg",
-        "linkIframe": "https://html5.gamemonetize.co/gnkny154qy6pptg91mychnfnhloxwlep/",
-        "descricao": "Desvie dos obstáculos e vença!",
-        "instrucoes": "Use as setas para desviar dos obstáculos.",
-        "categoria": "twoplayer"
+        "id": "cosmovoid",
+        "nome": "Cosmo Void",
+        "imagem": "assets/images-games/cosmovoid.webp",
+        "linkIframe": "//www.gamezhero.com/get-game-code/48dd34fa4a5fc8e0045aba1952e1818e",
+        "descricao": "Cosmo Void é um runner espacial de ação intensa, ambientado num corredor infinito repleto de obstáculos dinâmicos e mudanças constantes. Você pilota naves futuristas por corredores neon repletos de armadilhas — e tudo isso em alta velocidade. Sua missão: sobreviver o quanto puder com rapidez e precisão. Com o avanço, você desbloqueia novas naves, ativa o Hyper Mode e pode desafiar um amigo no modo local de 2 jogadores — puro reflexo e competitividade.",
+        "instrucoes": "W ou Seta para cima → acelerar e atravessar obstáculos com dash.\n\nS ou Seta para baixo → frear; use com moderação para não superaquentar.\n\nA / D ou Setas esquerda/direita → desviar de obstáculos.\n\nGerencie a barra de calor: frear demais pode causar superaquecimento e explosão da nave.",
+        "categoria": [
+            "speed",
+            "twoplayer"
+        ]
     },
     {
-        "id": "obbysurvive",
-        "nome": "Obby Parkour",
-        "imagem": "assets/images-games/Duck Shift-512x512.jpg",
-        "linkIframe": "https://example.com/jogo/obbysurvive/index.html",
-        "descricao": "Corra e salte pelas plataformas!",
-        "instrucoes": "Use as setas para correr e espaço para pular.",
-        "categoria": "twoplayer"
+        "id": "ItalianBrainrotHeadSoccerItalianBrainrotHeadSoccer",
+        "nome": "Italian Brainrot Head SoccerItalian Brainrot Head Soccer",
+        "imagem": "assets/images-games/italian.jpg",
+        "linkIframe": "https://www.miniplay.com/embed/italian-brainrot-head-soccer",
+        "descricao": "Futebol caótico e engraçado com personagens caricatos italianos. Partidas rápidas e cheias de cabeçadas e power-ups.",
+        "instrucoes": "Use setas ou WASD para mover. Espaço para chutar/cabecear. Marque gols antes do tempo acabar.",
+        "categoria": [
+            "twoplayer",
+            "sports"
+        ]
     },
     {
-        "id": "cubedash",
-        "nome": "Cube Dash",
-        "imagem": "assets/images-games/Cube Dash-512x512.jpg",
-        "linkIframe": "https://example.com/jogo/cubedash/index.html",
-        "descricao": "Desafie sua habilidade no Cubo Dash!",
-        "instrucoes": "Use as setas para mover o cubo.",
-        "categoria": "twoplayer"
+        "id": "RidersDownhillRacing",
+        "nome": "Riders Downhill Racing",
+        "imagem": "assets/images-games/Riders.jpg",
+        "linkIframe": "https://www.miniplay.com/embed/riders-downhill-racing",
+        "descricao": "Riders Downhill Racing é um jogo de corrida radical em montanhas. Escolha entre bicicleta, moto ou quadriciclo e dispute corridas em pistas desafiadoras cheias de rampas e obstáculos.",
+        "instrucoes": "Setas ou WASD para controlar o veículo. Barra de espaço para usar nitro. Complete as corridas o mais rápido possível.",
+        "categoria": [
+            "twoplayer",
+            "bike"
+        ]
     },
     {
-        "id": "crazydrift",
-        "nome": "Crazy Drift",
-        "imagem": "assets/images-games/Crazy Drift-512x512.jpg",
-        "linkIframe": "https://example.com/jogo/crazydrift/index.html",
-        "descricao": "Derrape em alta velocidade!",
-        "instrucoes": "Use as setas para dirigir e derrapar.",
-        "categoria": "twoplayer"
+        "id": "BadIceCream",
+        "nome": "Bad Ice-Cream",
+        "imagem": "assets/images-games/badice.jpg",
+        "linkIframe": "https://www.miniplay.com/embed/bad-ice-cream",
+        "descricao": "Controle um sorvete rebelde em Bad Ice Cream 1! Colete frutas, evite inimigos e use blocos de gelo para se proteger em fases cada vez mais desafiadoras.",
+        "instrucoes": "Jogador 1:**\nSetas direcionais → mover\nTecla Espaço → criar/quebrar blocos\n\n**Jogador 2:**\nWASD → mover\nTecla F → criar/quebrar blocos\n\nObjetivo: colete todas as frutas sem ser pego pelos inimigos para completar a fase.",
+        "categoria": [
+            "twoplayer",
+            "classics"
+        ]
     },
     {
-        "id": "pixelgun",
-        "nome": "Pixel Gun",
-        "imagem": "assets/images-games/Pixel Gun-512x512.jpg",
-        "linkIframe": "https://example.com/jogo/pixelgun/index.html",
-        "descricao": "Ação com gráficos retrô!",
-        "instrucoes": "Use mouse para mirar e clicar para atirar.",
-        "categoria": "twoplayer"
+        "id": "BadIceCream2",
+        "nome": "Bad Ice-Cream 2",
+        "imagem": "assets/images-games/badice2.jpg",
+        "linkIframe": "https://www.miniplay.com/embed/bad-ice-cream-2",
+        "descricao": "Bad Ice Cream 2 traz mais fases, novos inimigos e diversão em dobro! Continue a jornada dos sorvetes coletores de frutas em um desafio cooperativo ou solo.",
+        "instrucoes": "Jogador 1:**\nSetas direcionais → mover\nTecla Espaço → criar/quebrar blocos\n\n**Jogador 2:**\nWASD → mover\nTecla F → criar/quebrar blocos\n\nColete todas as frutas e evite os inimigos para passar de fase. Coordene bem os movimentos no modo de 2 jogadores!",
+        "categoria": [
+            "twoplayer",
+            "classics"
+        ]
     },
     {
-        "id": "zombierush",
-        "nome": "Zombie Rush",
-        "imagem": "assets/images-games/Zombie Rush-512x512.jpg",
-        "linkIframe": "https://example.com/jogo/zombierush/index.html",
-        "descricao": "Lute contra hordas de zumbis!",
-        "instrucoes": "Use WASD para mover e mouse para atirar.",
-        "categoria": "twoplayer"
-    },
-    {
-        "id": "adventurequest",
-        "nome": "Adventure Quest",
-        "imagem": "assets/images-games/Adventure Quest-512x512.jpg",
-        "linkIframe": "https://example.com/jogo/adventurequest/index.html",
-        "descricao": "Explore mundos e complete missões.",
-        "instrucoes": "Use teclado e mouse para jogar.",
-        "categoria": "twoplayer"
-    },
-    {
-        "id": "fastfootball",
-        "nome": "Fast Football",
-        "imagem": "assets/images-games/Fast Football-512x512.jpg",
-        "linkIframe": "https://example.com/jogo/fastfootball/index.html",
-        "descricao": "Jogo de futebol rápido e divertido.",
-        "instrucoes": "Use as setas para controlar jogadores.",
-        "categoria": "twoplayer"
-    },
-    {
-        "id": "battlezone",
-        "nome": "Battle Zone",
-        "imagem": "assets/images-games/Battle Zone-512x512.jpg",
-        "linkIframe": "https://example.com/jogo/battlezone/index.html",
-        "descricao": "Batalhas intensas em arena futurista.",
-        "instrucoes": "Use teclado para movimentar e atacar.",
-        "categoria": "twoplayer"
-    },
-    {
-        "id": "ghosthunt",
-        "nome": "Ghost Hunt",
-        "imagem": "assets/images-games/Ghost Hunt-512x512.jpg",
-        "linkIframe": "https://example.com/jogo/ghosthunt/index.html",
-        "descricao": "Caçe fantasmas em ambientes assustadores.",
-        "instrucoes": "Use mouse para mirar e atirar.",
-        "categoria": "twoplayer"
-    },
-    {
-        "id": "parkourpro",
-        "nome": "Parkour Pro",
-        "imagem": "assets/images-games/Parkour Pro-512x512.jpg",
-        "linkIframe": "https://example.com/jogo/parkourpro/index.html",
-        "descricao": "Domine as manobras do parkour urbano.",
-        "instrucoes": "Use espaço para pular e setas para correr.",
-        "categoria": "twoplayer"
-    },
-    {
-        "id": "speedracers",
-        "nome": "Speed Racers",
-        "imagem": "assets/images-games/Speed Racers-512x512.jpg",
-        "linkIframe": "https://example.com/jogo/speedracers/index.html",
-        "descricao": "Corridas alucinantes para dois jogadores.",
-        "instrucoes": "Use as setas para dirigir rápido.",
-        "categoria": "twoplayer"
-    },
-    {
-        "id": "spacebattle",
-        "nome": "Space Battle",
-        "imagem": "assets/images-games/Space Battle-512x512.jpg",
-        "linkIframe": "https://example.com/jogo/spacebattle/index.html",
-        "descricao": "Duelo espacial com naves futuristas.",
-        "instrucoes": "Use WASD para mover e mouse para atirar.",
-        "categoria": "twoplayer"
-    },
-    {
-        "id": "tankwars",
-        "nome": "Tank Wars",
-        "imagem": "assets/images-games/Tank Wars-512x512.jpg",
-        "linkIframe": "https://example.com/jogo/tankwars/index.html",
-        "descricao": "Batalha de tanques táticos para dois.",
-        "instrucoes": "Use teclado para controlar seu tanque.",
-        "categoria": "twoplayer"
-    },
-    {
-        "id": "fruitfight",
-        "nome": "Fruit Fight",
-        "imagem": "assets/images-games/Fruit Fight-512x512.jpg",
-        "linkIframe": "https://example.com/jogo/fruitfight/index.html",
-        "descricao": "Duelo divertido com frutas explosivas.",
-        "instrucoes": "Clique e arraste para lançar frutas.",
-        "categoria": "twoplayer"
-    },
-    {
-        "id": "ninjashadow",
-        "nome": "Ninja Shadow",
-        "imagem": "assets/images-games/Ninja Shadow-512x512.jpg",
-        "linkIframe": "https://example.com/jogo/ninjashadow/index.html",
-        "descricao": "Ação furtiva para dois ninjas.",
-        "instrucoes": "Use teclado para movimentos silenciosos.",
-        "categoria": "twoplayer"
-    },
-    {
-        "id": "rocketarena",
-        "nome": "Rocket Arena",
-        "imagem": "assets/images-games/Rocket Arena-512x512.jpg",
-        "linkIframe": "https://example.com/jogo/rocketarena/index.html",
-        "descricao": "Dispute batalhas com foguetes em arena.",
-        "instrucoes": "Use WASD para movimentar e espaço para disparar.",
-        "categoria": "twoplayer"
-    },
-    {
-        "id": "blockbattle",
-        "nome": "Block Battle",
-        "imagem": "assets/images-games/Block Battle-512x512.jpg",
-        "linkIframe": "https://example.com/jogo/blockbattle/index.html",
-        "descricao": "Construa e lute contra seu adversário.",
-        "instrucoes": "Use mouse para construir e atacar.",
-        "categoria": "twoplayer"
-    },
-    {
-        "id": "lasercombat",
-        "nome": "Laser Combat",
-        "imagem": "assets/images-games/Laser Combat-512x512.jpg",
-        "linkIframe": "https://example.com/jogo/lasercombat/index.html",
-        "descricao": "Duelo com armas a laser futuristas.",
-        "instrucoes": "Use as setas para se mover e clique para atirar.",
-        "categoria": "twoplayer"
-    },
-    {
-        "id": "caveescape",
-        "nome": "Cave Escape",
-        "imagem": "assets/images-games/Cave Escape-512x512.jpg",
-        "linkIframe": "https://example.com/jogo/caveescape/index.html",
-        "descricao": "Escape da caverna antes do tempo acabar.",
-        "instrucoes": "Use as setas para correr e pular.",
-        "categoria": "twoplayer"
+        "id": "Bad Ice-Cream 3",
+        "nome": "Bad Ice-Cream 3",
+        "imagem": "assets/images-games/badice3.png",
+        "linkIframe": "https://www.miniplay.com/embed/bad-ice-cream-3",
+        "descricao": "Bad Ice Cream 3 é o capítulo final da deliciosa trilogia dos sorvetes. Encare novos mapas, obstáculos criativos e inimigos desafiadores em fases cooperativas ou solo!",
+        "instrucoes": "**Jogador 1:**\nSetas direcionais → mover\nTecla Espaço → criar/quebrar blocos\n\n**Jogador 2:**\nWASD → mover\nTecla F → criar/quebrar blocos\n\nColete todas as frutas em cada fase, evite inimigos e use os blocos de gelo para se proteger e abrir caminho!",
+        "categoria": [
+            "twoplayer",
+            "classic"
+        ]
     }
 ]

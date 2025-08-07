@@ -41,6 +41,7 @@
                     <div class="dropdown-menu" role="menu">
                         <a href="#" data-categoria="twoplayer"><i class="fas fa-users"></i> 2 PLAYER</a>
                         <a href="#" data-categoria="acao"><i class="fas fa-fire"></i> ACTION</a>
+                        <a href="#" data-categoria="classics"><i class="fas fa-star"></i>CLASSICS</a>
                         <a href="#" data-categoria="racing"><i class="fas fa-car"></i> RACING</a>
                         <a href="#" data-categoria="multiplayer"><i class="fas fa-gamepad"></i> MULTIPLAYER</a>
                         <a href="#" data-categoria="fps"><i class="fas fa-crosshairs"></i> FPS</a>
@@ -66,31 +67,25 @@
     <main>
         <div id="main-content"></div>
 
-
         <section>
             <h1 class="titulo-des">Destaques</h1>
             <div class="container">
 
-                <!-- Destaque dinâmico (à esquerda) -->
-                <div class="destaque" id="destaque">
-                    <!-- conteúdo será preenchido pelo script -->
-                </div>
-
-                <!-- Cards de jogos (à direita) -->
+                <div class="destaque" id="destaque"></div>
                 <div class="jogos-laterais">
-                    <div class="linha" id="linha1">
-                        <!-- preenchido dinamicamente -->
-                    </div>
-                    <div class="linha" id="linha2">
-                        <!-- preenchido dinamicamente -->
-                    </div>
+                    <div class="linha" id="linha1"></div>
+                    <div class="linha" id="linha2"></div>
                 </div>
-
             </div>
         </section>
+
+        <!-- Carrossel para cada categoria igual ao modelo do twoplayer -->
+
         <div class="mais">
             <h1>2 player</h1>
-            <p>View More</p>
+            <a href="catalogo.html?categoria=twoplayer">
+                <p>View More</p>
+            </a>
         </div>
         <section class="new" id="carousel-twoplayer">
             <div class="carousel-container">
@@ -101,16 +96,159 @@
         </section>
 
         <div class="mais">
-            <h1>Single Player</h1>
-            <p>View More</p>
+            <h1>Action</h1>
+            <a href="catalogo.html?categoria=acao">
+                <p>View More</p>
+            </a>
         </div>
-        <section class="new" id="carousel-singleplayer">
+        <section class="new" id="carousel-acao">
             <div class="carousel-container">
                 <button class="arrow arrow-left prevBtn">&#10094;</button>
                 <div class="carousel-track"></div>
                 <button class="arrow arrow-right nextBtn">&#10095;</button>
             </div>
         </section>
+
+        <div class="mais">
+            <h1>Racing</h1>
+            <a href="catalogo.html?categoria=racing">
+                <p>View More</p>
+            </a>
+        </div>
+        <section class="new" id="carousel-racing">
+            <div class="carousel-container">
+                <button class="arrow arrow-left prevBtn">&#10094;</button>
+                <div class="carousel-track"></div>
+                <button class="arrow arrow-right nextBtn">&#10095;</button>
+            </div>
+        </section>
+
+        <div class="mais">
+            <h1>Multiplayer</h1>
+            <a href="catalogo.html?categoria=multiplayer">
+                <p>View More</p>
+            </a>
+        </div>
+        <section class="new" id="carousel-multiplayer">
+            <div class="carousel-container">
+                <button class="arrow arrow-left prevBtn">&#10094;</button>
+                <div class="carousel-track"></div>
+                <button class="arrow arrow-right nextBtn">&#10095;</button>
+            </div>
+        </section>
+
+        <div class="mais">
+            <h1>FPS</h1>
+            <a href="catalogo.html?categoria=fps">
+                <p>View More</p>
+            </a>
+        </div>
+        <section class="new" id="carousel-fps">
+            <div class="carousel-container">
+                <button class="arrow arrow-left prevBtn">&#10094;</button>
+                <div class="carousel-track"></div>
+                <button class="arrow arrow-right nextBtn">&#10095;</button>
+            </div>
+        </section>
+
+        <div class="mais">
+            <h1>Terror</h1>
+            <a href="catalogo.html?categoria=terror">
+                <p>View More</p>
+            </a>
+        </div>
+        <section class="new" id="carousel-terror">
+            <div class="carousel-container">
+                <button class="arrow arrow-left prevBtn">&#10094;</button>
+                <div class="carousel-track"></div>
+                <button class="arrow arrow-right nextBtn">&#10095;</button>
+            </div>
+        </section>
+
+        <div class="mais">
+            <h1>Sports</h1>
+            <a href="catalogo.html?categoria=sports">
+                <p>View More</p>
+            </a>
+        </div>
+        <section class="new" id="carousel-sports">
+            <div class="carousel-container">
+                <button class="arrow arrow-left prevBtn">&#10094;</button>
+                <div class="carousel-track"></div>
+                <button class="arrow arrow-right nextBtn">&#10095;</button>
+            </div>
+        </section>
+
+        <div class="mais">
+            <h1>Bike</h1>
+            <a href="catalogo.html?categoria=bike">
+                <p>View More</p>
+            </a>
+        </div>
+        <section class="new" id="carousel-bike">
+            <div class="carousel-container">
+                <button class="arrow arrow-left prevBtn">&#10094;</button>
+                <div class="carousel-track"></div>
+                <button class="arrow arrow-right nextBtn">&#10095;</button>
+            </div>
+        </section>
+
+        <div class="mais">
+            <h1>Fighting</h1>
+            <a href="catalogo.html?categoria=fighting">
+                <p>View More</p>
+            </a>
+        </div>
+        <section class="new" id="carousel-fighting">
+            <div class="carousel-container">
+                <button class="arrow arrow-left prevBtn">&#10094;</button>
+                <div class="carousel-track"></div>
+                <button class="arrow arrow-right nextBtn">&#10095;</button>
+            </div>
+        </section>
+
+        <div class="mais">
+            <h1>Speed</h1>
+            <a href="catalogo.html?categoria=speed">
+                <p>View More</p>
+            </a>
+        </div>
+        <section class="new" id="carousel-speed">
+            <div class="carousel-container">
+                <button class="arrow arrow-left prevBtn">&#10094;</button>
+                <div class="carousel-track"></div>
+                <button class="arrow arrow-right nextBtn">&#10095;</button>
+            </div>
+        </section>
+
+        <div class="mais">
+            <h1>2-3 Player</h1>
+            <a href="catalogo.html?categoria=player">
+                <p>View More</p>
+            </a>
+        </div>
+        <section class="new" id="carousel-player">
+            <div class="carousel-container">
+                <button class="arrow arrow-left prevBtn">&#10094;</button>
+                <div class="carousel-track"></div>
+                <button class="arrow arrow-right nextBtn">&#10095;</button>
+            </div>
+        </section>
+
+        <div class="mais">
+            <h1>Classics</h1>
+            <a href="catalogo.html?categoria=classics">
+                <p>View More</p>
+            </a>
+        </div>
+        <section class="new" id="carousel-classics">
+            <div class="carousel-container">
+                <button class="arrow arrow-left prevBtn">&#10094;</button>
+                <div class="carousel-track"></div>
+                <button class="arrow arrow-right nextBtn">&#10095;</button>
+            </div>
+        </section>
+
 
 
     </main>
@@ -141,7 +279,7 @@
 
 </body>
 
-<script src="index.js"></script>
+<script src="./scripts/index.js"></script>
 
 
 </html>

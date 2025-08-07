@@ -19,7 +19,8 @@
 
         <form id="barra-pesquisa" action="#" method="get">
             <span id="icon-lupa" class="icone-lupa"><i class="fas fa-search"></i></span>
-            <input id="search" type="text" placeholder="Buscar jogos..." name="search" aria-label="Campo de busca">
+            <input id="search" type="text" placeholder="Buscar jogos..." name="search" aria-label="Campo de busca"
+                autocomplete="off">
         </form>
 
         <nav id="navegacao-menu" aria-label="Menu de categorias">
@@ -36,17 +37,22 @@
                     </button>
 
                     <div class="dropdown-menu" role="menu">
-                        <a href="#" data-categoria="2 PLAYER"><i class="fas fa-users"></i> 2 PLAYER</a>
-                        <a href="#" data-categoria="ADVENTURE"><i class="fas fa-hat-wizard"></i> ADVENTURE</a>
-                        <a href="#" data-categoria="CASUAL"><i class="fas fa-star"></i> CASUAL</a>
-                        <a href="#" data-categoria="RACING"><i class="fas fa-car"></i> RACING</a>
-                        <a href="#" data-categoria="MULTIPLAYER"><i class="fas fa-gamepad"></i> MULTIPLAYER</a>
-                        <a href="#" data-categoria="FPS"><i class="fas fa-crosshairs"></i> FPS</a>
-                        <a href="#" data-categoria="BATTLE"><i class="fas fa-fire"></i> BATTLE</a>
-                        <a href="#" data-categoria="TERROR"><i class="fas fa-ghost"></i> TERROR</a>
-                        <a href="#" data-categoria="ART"><i class="fas fa-paint-brush"></i> ART</a>
-                        <a href="#" data-categoria="SPORTS"><i class="fas fa-futbol"></i> SPORTS</a>
-                        <a href="#" data-categoria="PARKOUR"><i class="fas fa-running"></i> PARKOUR</a>
+                        <a href="#" data-categoria="twoplayer"><i class="fas fa-users"></i> 2 PLAYER</a>
+                        <a href="#" data-categoria="classics"><i class="fas fa-star"></i>CLASSICS</a>
+                        <a href="#" data-categoria="acao"><i class="fas fa-fire"></i> ACTION</a>
+                        <a href="#" data-categoria="racing"><i class="fas fa-car"></i> RACING</a>
+                        <a href="#" data-categoria="multiplayer"><i class="fas fa-gamepad"></i> MULTIPLAYER</a>
+                        <a href="#" data-categoria="fps"><i class="fas fa-crosshairs"></i> FPS</a>
+                        <a href="#" data-categoria="terror"><i class="fas fa-ghost"></i> TERROR</a>
+                        <a href="#" data-categoria="sports"><i class="fas fa-futbol"></i> SPORTS</a>
+                        <a href="#" data-categoria="bike"><i class="fas fa-bicycle"></i> BIKE</a>
+                        <a href="#" data-categoria="fighting"> <i class="fas fa-hand-fist"></i> FIGHTING</a>
+                        <a href="#" data-categoria="speed"><i class="fas fa-bolt"></i>SPEED</a>
+                        <a href="#" data-categoria="player"><i class="fas fa-people-group"></i>2-3 PLAYER</a>
+
+
+
+
                     </div>
                 </li>
             </ul>
@@ -85,37 +91,9 @@
             <div id="aviso" class="aviso">🔁 Clique no jogo para ativar os controles</div>
 
 
-            <div class="game-zone">
-                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
-                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
-                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
-                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
-                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
-                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
-                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
-                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
-            </div>
 
-            <div class="game-zone">
-                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
-                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
-                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
-                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
-                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
-                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
-                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
-                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
-            </div>
-            <div class="game-zone">
-                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
-                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
-                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
-                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
-                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
-                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
-                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
-                <div class="game-1"><img src="assets/games/image1.jpg" alt=""></div>
-            </div>
+
+
 
             <!-- Seção abaixo do player: título, descrição e cards -->
             <section class="game-info">
@@ -143,6 +121,6 @@
 
 </body>
 
-<script src="player.js"></script>
+<script src="./scripts/player.js"></script>
 
 </html>

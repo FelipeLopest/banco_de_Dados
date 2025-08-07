@@ -1,4 +1,5 @@
 /* ----------------------- RESET E FONTE BASE ----------------------- */
+/* Reseta margens, preenchimentos e define a fonte padrão */
 * {
     margin: 0;
     padding: 0;
@@ -8,849 +9,746 @@
     font-family: "Jersey 20", sans-serif;
 }
 
+
 /* ----------------------- BODY E FUNDO ----------------------- */
+/* Estiliza o corpo da página */
 body {
     background-color: #080C3F;
+    /* Cor de fundo */
     max-width: 100vw;
+    /* Largura máxima */
     overflow-x: hidden;
+    /* Oculta overflow horizontal */
     height: 100%;
-
-
+    /* Altura total */
 }
 
 
-
-
 /* ----------------------- HEADER ----------------------- */
+/* Estiliza o cabeçalho da página */
 header {
     background-color: #050451;
+    /* Cor de fundo do cabeçalho */
     padding: 0 10px;
+    /* Preenchimento lateral */
     display: flex;
+    /* Flexbox para layout */
     align-items: center;
+    /* Alinha itens verticalmente */
     justify-content: space-between;
+    /* Espaço entre itens */
     text-align: center;
+    /* Centraliza texto */
 }
 
 /* Logo */
 #img-logo {
     width: 200px;
+    /* Largura da logo */
     height: auto;
+    /* Altura automática */
 }
 
+
 /* ----------------------- BARRA DE PESQUISA ----------------------- */
+/* Estiliza o formulário de pesquisa */
 form {
     position: relative;
+    /* Posicionamento relativo para elementos filhos */
 }
 
 #search {
     width: 600px;
+    /* Largura da barra de pesquisa */
     height: 40px;
+    /* Altura da barra de pesquisa */
     border-radius: 25px;
+    /* Bordas arredondadas */
     background-color: #08068846;
+    /* Cor de fundo */
     border: none;
+    /* Sem borda */
     padding-left: 50px;
-    /* espaço para a lupa */
+    /* Espaço para o ícone da lupa */
     color: white;
+    /* Cor do texto */
     font-size: 20px;
+    /* Tamanho da fonte */
     outline-color: #05036d90;
+    /* Cor do contorno */
 }
 
 #search:focus {
     outline: 2px solid #0500ff;
+    /* Contorno ao focar */
 }
 
 #icon-lupa {
     position: absolute;
+    /* Posicionamento absoluto */
     top: 50%;
+    /* Centraliza verticalmente */
     left: 20px;
+    /* Espaço à esquerda */
     transform: translateY(-50%);
+    /* Centraliza verticalmente */
     color: white;
+    /* Cor do ícone */
     pointer-events: none;
+    /* Ignora eventos de ponteiro */
     font-size: 20px;
+    /* Tamanho do ícone */
 }
 
+
 /* ----------------------- MENU DE NAVEGAÇÃO ----------------------- */
+/* Estiliza o menu de navegação */
 #navegacao-menu {
     margin-left: 50px;
+    /* Margem à esquerda */
 }
 
 /* Dropdown */
 .dropdown {
     position: relative;
+    /* Posicionamento relativo */
     z-index: 999;
-    /* garantir que esteja acima de outros elementos */
+    /* Garante que fique acima de outros elementos */
 }
 
 .dropdown-menu {
     position: absolute;
+    /* Posicionamento absoluto */
     top: 110%;
+    /* Posição abaixo do dropdown */
     left: 0;
+    /* Alinhado à esquerda */
     background-color: #06016C;
+    /* Cor de fundo */
     border-radius: 10px;
+    /* Bordas arredondadas */
     padding: 10px 0;
+    /* Preenchimento vertical */
     display: none;
+    /* Oculta por padrão */
     flex-direction: column;
+    /* Coluna para os itens */
     min-width: 89%;
+    /* Largura mínima */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    /* Sombra */
     z-index: 100;
+    /* Z-index para sobreposição */
     min-height: 150px;
-
+    /* Altura mínima */
 }
 
 .dropdown-menu.show {
     display: flex;
+    /* Exibe quando ativo */
 }
 
 .dropdown-menu a {
     color: white;
+    /* Cor do texto */
     padding: 10px 20px;
+    /* Preenchimento dos links */
     display: flex;
+    /* Flexbox para alinhamento */
     align-items: center;
+    /* Alinha itens verticalmente */
     gap: 10px;
+    /* Espaço entre ícone e texto */
     text-align: left;
+    /* Alinhamento à esquerda */
     transition: background 0.2s ease;
+    /* Transição suave */
     font-size: 22px;
+    /* Tamanho da fonte */
 }
 
 .dropdown-menu a:hover {
     background-color: #050451;
+    /* Cor de fundo ao passar o mouse */
 }
 
 
-
 /* ----------------------- BOTÃO DE CATEGORIAS ----------------------- */
+/* Estiliza os botões de categorias */
 .botao-categorias {
     display: flex;
+    /* Flexbox para alinhamento */
     align-items: center;
+    /* Alinha itens verticalmente */
     justify-content: center;
+    /* Centraliza horizontalmente */
     gap: 10px;
+    /* Espaço entre ícone e texto */
     width: 250px;
+    /* Largura do botão */
     height: 45px;
+    /* Altura do botão */
     background-color: #06016C;
+    /* Cor de fundo */
     border-radius: 20px;
+    /* Bordas arredondadas */
     color: white;
+    /* Cor do texto */
     font-size: 25px;
+    /* Tamanho da fonte */
     margin-right: 30px;
+    /* Margem à direita */
     border: none;
+    /* Sem borda */
     cursor: pointer;
+    /* Cursor de ponteiro */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    /* Sombra */
     transition: background 0.3s;
+    /* Transição suave */
 }
 
 .botao-categorias:hover {
     background-color: #06016c73;
+    /* Cor ao passar o mouse */
 }
 
 .botao-categorias:active {
     background-color: #06016c29;
+    /* Cor ao clicar */
 }
 
 /* Ícones dentro do botão */
 .icon-drop,
 .icon-seta {
     width: 24px;
+    /* Largura dos ícones */
     height: auto;
+    /* Altura automática */
 }
+
 
 /* ----------------------- ÍCONES DAS CATEGORIAS ----------------------- */
+/* Estiliza os ícones das categorias */
 .fa-users {
     color: blue;
+    /* Cor do ícone de usuários */
 }
-
 
 .fa-star {
     color: yellow;
+    /* Cor do ícone de estrela */
 }
 
 .fa-car {
     color: rgba(219, 18, 18, 0.896);
+    /* Cor do ícone de carro */
 }
 
 .fa-gamepad {
     color: silver;
+    /* Cor do ícone de gamepad */
 }
 
 .fa-crosshairs {
     color: rgb(232, 206, 12);
+    /* Cor do ícone de mira */
 }
 
 .fa-fire {
     color: orange;
+    /* Cor do ícone de fogo */
 }
 
 .fa-paint-brush {
     color: #ae00b7;
+    /* Cor do ícone de pincel */
 }
 
 .fa-question {
     color: rgb(153, 169, 183);
+    /* Cor do ícone de pergunta */
 }
 
 .fa-running {
     color: antiquewhite;
+    /* Cor do ícone de corrida */
 }
 
 .fa-ghost {
     color: rgb(170, 6, 215);
+    /* Cor do ícone de fantasma */
 }
 
 .fa-bicycle {
     color: #1800ca;
+    /* Cor do ícone de bicicleta */
 }
 
 .fa-hand-fist {
     color: rgb(244, 229, 162);
+    /* Cor do ícone de punho */
 }
 
 .fa-bolt {
     color: orange;
+    /* Cor do ícone de raio */
 }
 
 .fa-people-group {
     color: #0dc0d7;
+    /* Cor do ícone de grupo de pessoas */
 }
+
 
 /* ----------------------- LISTA PADRÃO ----------------------- */
+/* Estiliza listas */
 li {
     display: flex;
+    /* Flexbox para alinhamento */
     align-items: center;
+    /* Alinha itens verticalmente */
     justify-content: center;
+    /* Centraliza horizontalmente */
 }
 
-/* ----------------------- carrosel ----------------------- */
+
+/* ----------------------- CARROUSEL ----------------------- */
+/* Estiliza o carrossel */
 .carousel-container {
     position: relative;
+    /* Posicionamento relativo */
     max-width: 1500px;
-
+    /* Largura máxima */
     margin-right: 30px;
-
+    /* Margem à direita */
     overflow: hidden;
+    /* Oculta overflow */
 }
 
 .carousel-track {
     display: flex;
+    /* Flexbox para os cards */
     transition: transform 0.5s ease;
+    /* Transição suave */
     will-change: transform;
-
-
-    /* Espaço para "sair" do último card */
+    /* Otimização de desempenho */
 }
 
 .card {
     flex: 0 0 200px;
-    /* um pouco menor que antes (de 200px para 190px) */
-
+    /* Largura fixa */
     margin-right: 10px;
+    /* Margem à direita */
     display: flex;
+    /* Flexbox para alinhamento */
     align-items: center;
+    /* Alinha itens verticalmente */
     justify-content: center;
+    /* Centraliza horizontalmente */
     color: white;
+    /* Cor do texto */
     cursor: pointer;
+    /* Cursor de ponteiro */
     user-select: none;
+    /* Desabilita seleção de texto */
     transition: background-color 0.3s;
+    /* Transição suave */
 }
 
 .card:first-child {
     margin-left: 30px;
-    /* espaço extra à esquerda */
+    /* Espaço extra à esquerda */
 }
 
 .card:last-child {
     margin-right: 30px;
-    /* espaço extra à direita */
+    /* Espaço extra à direita */
 }
-
 
 .card:hover {
     transform: scale(1.04);
-    /* aumenta 10% */
+    /* Aumenta o tamanho ao passar o mouse */
     z-index: 10;
-    /* traz o card para frente */
-
-    /* sombra legal */
+    /* Traz o card para frente */
 }
 
 .card.ver-mais {
     background-color: #333;
-    /* Pode mudar a cor para destacar */
+    /* Cor de fundo para destaque */
     cursor: pointer;
+    /* Cursor de ponteiro */
     user-select: none;
-    /* Mesmas dimensões básicas, sem imagens */
+    /* Desabilita seleção de texto */
     display: flex;
+    /* Flexbox para alinhamento */
     justify-content: center;
+    /* Centraliza horizontalmente */
     align-items: center;
+    /* Alinha itens verticalmente */
     height: 120px;
+    /* Altura fixa */
 }
 
 /* Botões de navegação alinhados às laterais do container */
 .arrow {
     position: absolute;
+    /* Posicionamento absoluto */
     top: 50%;
+    /* Centraliza verticalmente */
     transform: translateY(-50%);
+    /* Centraliza verticalmente */
     width: 45px;
+    /* Largura do botão */
     height: 100px;
+    /* Altura do botão */
     background: rgba(39, 38, 38, 0.4);
+    /* Cor de fundo */
     border: none;
+    /* Sem borda */
     color: white;
+    /* Cor do texto */
     font-size: 1.5rem;
+    /* Tamanho da fonte */
     cursor: pointer;
+    /* Cursor de ponteiro */
     border-radius: 6px;
-    /* deixe 0px se quiser cantos retos */
+    /* Bordas arredondadas */
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    /* Sombra */
     transition: background-color 0.3s, transform 0.2s;
+    /* Transição suave */
     display: flex;
+    /* Flexbox para alinhamento */
     align-items: center;
+    /* Alinha itens verticalmente */
     justify-content: center;
+    /* Centraliza horizontalmente */
     z-index: 10;
+    /* Z-index para sobreposição */
     opacity: 0;
+    /* Inicialmente invisível */
     pointer-events: none;
+    /* Ignora eventos de ponteiro */
 }
 
 .arrow:hover:not(:disabled) {
     background-color: rgba(51, 50, 50, 0.7);
+    /* Cor ao passar o mouse */
     transform: translateY(-50%) scale(1.05);
+    /* Aumenta o tamanho ao passar o mouse */
 }
 
 .arrow:disabled {
     opacity: 0 !important;
+    /* Mantém invisível se desabilitado */
     pointer-events: none !important;
+    /* Ignora eventos de ponteiro */
     cursor: default;
+    /* Cursor padrão */
 }
 
 /* Posicionamento lateral */
 .arrow-left {
     left: 10px;
+    /* Alinhado à esquerda */
 }
 
 .arrow-right {
     right: 10px;
+    /* Alinhado à direita */
 }
 
 /* Aparecem apenas no hover */
 .carousel-container:hover .arrow:not(:disabled) {
     opacity: 1;
+    /* Torna visível ao passar o mouse */
     pointer-events: auto;
+    /* Permite eventos de ponteiro */
 }
 
 
-
-/* Destaques*/
-
-
-
+/* ----------------------- DESTAQUES ----------------------- */
+/* Estiliza a seção de destaques */
 .container {
     display: flex;
+    /* Flexbox para layout */
     gap: 20px;
+    /* Espaço entre itens */
     max-width: 1500px;
+    /* Largura máxima */
     padding: 5px 10px 5px;
-
-
+    /* Preenchimento */
 }
 
 .titulo-des {
     color: white;
+    /* Cor do texto */
     margin-left: 10px;
+    /* Margem à esquerda */
     margin-top: 5px;
+    /* Margem acima */
 }
-
-
-
 
 .container img {
     width: 100%;
+    /* Largura total */
     height: 100%;
+    /* Altura total */
     object-fit: cover;
-    /* corta e preenche bonitinho */
+    /* Corta e preenche */
     display: block;
+    /* Exibe como bloco */
 }
 
 .destaque {
     width: 400px;
+    /* Largura do destaque */
     height: 260px;
+    /* Altura do destaque */
     background-color: #333;
+    /* Cor de fundo */
     border-radius: 10px;
+    /* Bordas arredondadas */
     background-image: url('https://via.placeholder.com/600x400');
+    /* Imagem de fundo */
     background-size: cover;
+    /* Cobre todo o espaço */
     background-position: center;
-
+    /* Centraliza a imagem */
 }
 
 #linha2 {
     margin-top: 20px;
+    /* Margem acima */
 }
 
 .lista-jogos {
     display: flex;
+    /* Flexbox para layout */
     flex-direction: column;
+    /* Coluna para os itens */
     gap: 20px;
+    /* Espaço entre itens */
     width: 50%;
+    /* Largura da lista */
     justify-content: space-between;
-
+    /* Espaço entre itens */
 }
 
 .linha {
     display: flex;
+    /* Flexbox para layout */
     gap: 15px;
+    /* Espaço entre itens */
 }
 
 .jogo {
     flex: 0 0 205px;
+    /* Largura fixa */
     height: 120px;
+    /* Altura do jogo */
     background-color: #222;
+    /* Cor de fundo */
     background-image: url('https://via.placeholder.com/300x190');
+    /* Imagem de fundo */
     background-size: cover;
+    /* Cobre todo o espaço */
     background-position: center;
+    /* Centraliza a imagem */
     transition: transform 0.2s ease;
+    /* Transição suave */
 }
 
 .jogo img {
     width: 100%;
+    /* Largura total */
     height: 100%;
+    /* Altura total */
     object-fit: cover;
-    /* corta e preenche bonitinho */
+    /* Corta e preenche */
     display: block;
-
+    /* Exibe como bloco */
 }
 
 .jogo:hover {
     transform: scale(1.05);
+    /* Aumenta o tamanho ao passar o mouse */
     cursor: pointer;
+    /* Cursor de ponteiro */
 }
 
 .destaque:hover {
     transform: scale(1.01);
+    /* Aumenta o tamanho ao passar o mouse */
     cursor: pointer;
+    /* Cursor de ponteiro */
 }
 
+
 /* === GERAL === */
+/* Estiliza elementos gerais */
 #menu-toggle {
     display: none;
+    /* Oculta o botão de menu */
     background: none;
+    /* Sem fundo */
     border: none;
+    /* Sem borda */
     font-size: 2rem;
+    /* Tamanho da fonte */
     cursor: pointer;
+    /* Cursor de ponteiro */
 }
 
 /* === MENU E PESQUISA INICIALMENTE VISÍVEIS === */
 #menu-content {
     display: flex;
+    /* Flexbox para layout */
     gap: 1rem;
+    /* Espaço entre itens */
     align-items: center;
+    /* Alinha itens verticalmente */
 }
 
 html,
 body {
     width: 100%;
+    /* Largura total */
     max-width: 100vw;
+    /* Largura máxima */
     overflow-x: hidden;
+    /* Oculta overflow horizontal */
 }
 
 main {
     display: flex;
+    /* Flexbox para layout */
     justify-content: center;
+    /* Centraliza horizontalmente */
     align-items: center;
+    /* Alinha itens verticalmente */
     flex-direction: column;
+    /* Coluna para os itens */
     min-height: 500px;
-
+    /* Altura mínima */
 }
 
 
-
+/* ----------------------- MAIS ----------------------- */
+/* Estiliza a seção "mais" */
 .mais {
     display: flex;
+    /* Flexbox para layout */
     width: 100%;
+    /* Largura total */
     max-width: 1500px;
+    /* Largura máxima */
     color: white;
-    margin: 10px
-        /* ou o mesmo que o carousel-container */
-
+    /* Cor do texto */
+    margin: 10px;
+    /* Margem */
 }
 
 .mais h1 {
     font-size: 25px;
+    /* Tamanho da fonte */
     margin-left: 15px;
-
+    /* Margem à esquerda */
 }
 
 .mais p {
     margin-left: 7px;
+    /* Margem à esquerda */
     margin-top: 5px;
-
+    /* Margem acima */
     text-decoration: underline;
+    /* Sublinhado */
     cursor: pointer;
-
-
+    /* Cursor de ponteiro */
 }
 
+
+/* ----------------------- FOOTER ----------------------- */
+/* Estiliza o rodapé */
 .site-footer {
     background-color: #050451;
+    /* Cor de fundo */
     color: #fff;
+    /* Cor do texto */
     padding: 20px;
+    /* Preenchimento */
     font-size: 16px;
+    /* Tamanho da fonte */
     margin-top: 50px;
+    /* Margem acima */
 }
 
 .footer-content {
     max-width: 1500px;
+    /* Largura máxima */
     margin: 0 auto;
+    /* Centraliza */
     display: flex;
+    /* Flexbox para layout */
     justify-content: space-between;
+    /* Espaço entre itens */
     flex-wrap: wrap;
+    /* Permite quebra de linha */
     gap: 30px;
+    /* Espaço entre itens */
 }
 
 .footer-left h3 {
     font-size: 24px;
+    /* Tamanho da fonte */
     margin-bottom: 10px;
+    /* Margem abaixo */
     color: #fff;
+    /* Cor do texto */
 }
 
 .footer-left p {
     max-width: 600px;
+    /* Largura máxima */
     line-height: 1.6;
+    /* Altura da linha */
     color: #ccc;
+    /* Cor do texto */
 }
 
 .footer-right h4 {
     font-size: 20px;
+    /* Tamanho da fonte */
     margin-bottom: 10px;
+    /* Margem abaixo */
     color: #fff;
+    /* Cor do texto */
 }
 
 .footer-right ul {
     padding: 0;
+    /* Sem preenchimento */
 }
 
 .footer-right li {
     margin-bottom: 8px;
+    /* Margem abaixo */
     color: #ccc;
+    /* Cor do texto */
 }
 
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
+    /* Linha superior */
     text-align: center;
+    /* Centraliza texto */
     padding-top: 15px;
+    /* Preenchimento acima */
     margin-top: 30px;
+    /* Margem acima */
     color: #aaa;
+    /* Cor do texto */
     font-size: 14px;
-}
-
-
-/* === Player === */
-
-li {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.game-screen {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 20px;
-    gap: 20px;
-}
-
-.ads-left,
-.ads-right {
-    width: 160px;
-    min-height: 600px;
-    background-color: #050451;
-
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.ad-box {
-    color: #fff;
-    text-align: center;
-    font-size: 14px;
-    padding: 10px;
-}
-
-
-
-.game-controls {
-
-    display: flex;
-    gap: 16px;
-    background-color: #0f089a;
-    width: 900px;
-    box-shadow: 0 4px 12px rgba(3, 66, 226, 0.25);
-}
-
-.game-controls button {
-
-    border: none;
-
-    padding: 12px 16px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    transition: transform 0.2s;
-}
-
-.game-controls button:hover {
-    transform: scale(1.1);
-}
-
-#aviso.aviso {
-    display: none;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.85);
-    color: white;
-    padding: 12px 25px;
-    border-radius: 10px;
-    font-weight: bold;
-    font-size: 16px;
-    z-index: 9999;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
-}
-
-.game-container {
-    width: 900px;
-
-    background: #06016C;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    padding-bottom: 40px;
-}
-
-/* PLAYER (iframe + botões), separado do restante */
-.player {
-    width: 900px;
-    padding: 20 20px 20px;
-    background-color: #0d0874;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    position: relative;
-    border-radius: 10px;
-}
-
-.logo {
-    display: flex;
-    font-size: 15px;
-
-}
-
-.logo img {
-    width: 70px;
-    height: 45px;
-    margin-right: 10px;
-    margin-left: 10px;
-    margin-top: 5px;
-
-}
-
-.logo h1 {
-    display: flex;
-    align-items: center;
-    color: white;
-    font-size: 20px;
-
-}
-
-/* iframe igual ao estilo anterior */
-.player iframe {
-    width: 100%;
-    height: 600px;
-    border: none;
-    background: #fff;
-    box-shadow: 0 4px 12px rgba(3, 66, 226, 0.25);
-}
-
-#btn-full {
-    color: white;
-    font-size: 15px;
-}
-
-#btn-sound {
-    color: white;
-}
-
-/* Botões abaixo do iframe */
-.game-controls {
-    display: flex;
-    gap: 16px;
-    border-radius: 0px 0px 10px 10px;
-    justify-content: space-between;
-    height: 55px;
-    box-sizing: border-box;
-
-
-
-}
-
-.game-controls button {
-    border: none;
-    height: 40px;
-    border-radius: 10px;
-    cursor: pointer;
-
-
-    box-shadow: 0 4px 12px rgba(3, 66, 226, 0.25);
-    transition: transform 0.2s;
-    background-color: #06016C;
-    margin-top: 8px;
-    margin-right: 10px;
-}
-
-.game-controls button:hover {
-    transform: scale(1.1);
-}
-
-/* Aviso de clique */
-#aviso.aviso {
-    display: none;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.85);
-    color: white;
-    padding: 12px 25px;
-    border-radius: 10px;
-    font-weight: bold;
-    font-size: 16px;
-    z-index: 9999;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
-}
-
-/* Seções abaixo do player */
-.game-info {
-    width: 100%;
-    margin-top: 30px;
-    padding: 10px;
-    color: white;
-
-}
-
-.game-title {
-    font-size: 32px;
-    margin-bottom: 10px;
-}
-
-.game-description {
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-.related-games {
-    margin-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.related-games img {
-    width: 100px;
-    height: 70px;
-}
-
-.game-zone {
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.game-1 {
-    width: 100px;
-    height: 70px;
-    background-color: red;
-
-}
-
-.game-1:hover {
-    transform: scale(1.05);
-}
-
-.game-zone img {
-    width: 100%;
-
-}
-
-/*catalogo */
-
-.grid-jogos {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    /* 5 cards por linha */
-    gap: 20px;
-    padding: 30px;
-    max-width: 1400px;
-    margin: 0 auto;
-    justify-content: center;
-}
-
-.grid-jogos a {
-    display: block;
-    width: 100%;
-    text-decoration: none;
-    border-radius: 12px;
-    overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    background-color: #1e1e1e;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-.grid-jogos img {
-    width: 100%;
-    height: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.3s ease;
-}
-
-.grid-jogos a:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
-}
-
-.grid-jogos a:hover img {
-    transform: scale(1.05);
-}
-
-#titulo-categoria {
-    font-size: 2rem;
-    text-align: center;
-    margin-top: 20px;
-    color: #fff;
-    font-weight: bold;
-}
-
-#paginacao {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 30px auto;
-    max-width: 600px;
-}
-
-#paginacao button {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 16px;
-    font-size: 1rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-#paginacao button:hover,
-#paginacao button.active {
-    background-color: #555;
+    /* Cor do texto */
 }
