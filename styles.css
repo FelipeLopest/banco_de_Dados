@@ -83,10 +83,12 @@ form {
 
 .dropdown-menu {
     position: absolute;
+    text-align: center;
     top: 110%;
+    width: 250px;
     left: 0;
     background-color: #06016C;
-    border-radius: 10px;
+    
     padding: 10px 0;
     display: none;
     flex-direction: column;
@@ -94,6 +96,7 @@ form {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     z-index: 100;
     min-height: 150px;
+    
 
 }
 
@@ -127,7 +130,7 @@ form {
     width: 250px;
     height: 45px;
     background-color: #06016C;
-    border-radius: 20px;
+   
     color: white;
     font-size: 25px;
     margin-right: 30px;
@@ -754,7 +757,7 @@ li {
 }
 
 .related-games img {
-    width: 100px;
+    width: 110px;
     height: 70px;
 }
 
@@ -767,7 +770,7 @@ li {
 .game-1 {
     width: 100px;
     height: 70px;
-    background-color: red;
+    
 
 }
 
@@ -853,4 +856,317 @@ li {
 #paginacao button:hover,
 #paginacao button.active {
     background-color: #555;
+}
+
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #06016c;
+    color: white;
+    position: relative;
+}
+
+/* Logo */
+header a img {
+    height: 50px;
+}
+
+/* Pesquisa */
+
+
+/* Menu categorias */
+#navegacao-menu ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+#navegacao-menu .dropdown {
+    position: relative;
+}
+
+.dropdown-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #06016c;
+    display: none;
+    flex-direction: column;
+    min-width: 150px;
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.dropdown-menu a {
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.dropdown-menu a:hover {
+    background: #1a1a8c;
+}
+
+/* Mostrar dropdown */
+.dropdown-menu.show {
+    display: flex;
+}
+
+/* Botão hambúrguer */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* RESPONSIVO MOBILE */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #06016c;
+    color: white;
+    position: relative;
+    z-index: 10;
+}
+
+header a img {
+    height: 50px;
+    transition: height 0.3s ease;
+}
+
+/* Busca desktop */
+
+
+/* Dropdown categorias */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #0b0b50;
+    top: 100%;
+    left: 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Botão hamburguer */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+}
+
+/* Drawer mobile */
+.drawer {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 150px;
+    height: 100vh;         /* altura total da tela */
+    max-height: 100vh;     /* garante que não ultrapasse a tela */
+    overflow-y: auto;      /* scroll vertical */
+    overflow-x: hidden;    /* evita scroll horizontal */
+    background: linear-gradient(160deg, #06016c, #2b1b8c);
+    color: white;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    border-radius: 15px 0 0 15px;
+    box-shadow: -4px 0 15px rgba(0,0,0,0.5);
+    transition: right 0.3s ease;
+    z-index: 100;
+}
+
+.drawer.active {
+    right: 0;
+}
+
+/* Barra de busca dentro do drawer */
+.drawer input {
+  padding: 10px;
+    border-radius: 25px;
+    border: none;
+    width: 100%;
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+
+.drawer input::placeholder {
+    color: rgba(255,255,255,0.7);
+}
+
+.drawer input:focus {
+    outline: none;
+    background-color: rgba(255,255,255,0.2);
+}
+
+/* Ícone dentro da barra de busca */
+.drawer .icone-lupa {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 16px;
+}
+
+/* Lista de categorias */
+.drawer-categorias {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.drawer-categorias li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 12px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.drawer-categorias li a i {
+    min-width: 20px;
+    text-align: center;
+}
+
+.drawer-categorias li a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateX(5px);
+}
+
+/* Overlay para clicar fora e fechar */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    display: none;
+    z-index: 50;
+    backdrop-filter: blur(2px);
+}
+
+.overlay.active {
+    display: block;
+}
+
+#mobile-grid {
+  display: none; /* escondido no desktop */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 10px;
+}
+
+#mobile-grid a {
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+#mobile-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#mobile-grid a {
+    display: block;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#mobile-grid a:hover {
+    transform: translateY(-5px) scale(1.05); /* sobe e aumenta um pouco */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4); /* sombra mais intensa */
+}
+
+#mobile-grid a img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+#mobile-grid a:hover img {
+    transform: scale(1.1); /* zoom leve na imagem */
+}
+
+
+
+/* Responsivo */
+@media (max-width: 786px) {
+    header a img { height: 35px; }
+    #barra-pesquisa { display: none; }
+    #navegacao-menu { display: none; }
+    .menu-toggle { display: block; }
+    .icone-lupa{display: none;}
+    #img-logo{width: 150px;}
+    #mobile-grid {
+    display: grid;
+  }
+  .titulo-des,
+  .container,
+  .mais,
+  .new {
+    display: none !important;
+  }
+   
+}
+
+@media (max-width: 768px) {
+    #mobile-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        padding: 10px;
+        margin-top: 10px; /* espaço para encostar no header */
+        justify-items: center; /* centraliza os cards horizontalmente */
+    }
+
+    main {
+        display: block; /* tira o flex que centraliza verticalmente */
+        padding-top: 10px; /* espaço do header */
+    }
 }
