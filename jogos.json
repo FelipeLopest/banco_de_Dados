@@ -2,7 +2,7 @@
   {
     "id": "diesel_and_death",
     "nome": "Diesel and Death",
-    "imagem": "",
+    "imagem": "./assets/images-games/Diesel.jpeg",
     "linkIframe": "https://www.miniplay.com/embed/diesel-and-death",
     "descricao": "Corrida mortal: derrote seus rivais à força.",
     "instrucoes": "Acelere, colete bônus e vença.",
@@ -11,8 +11,8 @@
   {
     "id": "traffic_rally",
     "nome": "Traffic Rally",
-    "imagem": "",
-    "linkIframe": "",
+    "imagem": "./assets/images-games/traffic-rally.png",
+    "linkIframe": "https://www.twoplayergames.org/embed/two-supra-drifer",
     "descricao": "Enfrente trânsito intenso nesta corrida.",
     "instrucoes": "Use setas para dirigir.",
     "categoria": ["racing"]
@@ -20,8 +20,8 @@
   {
     "id": "3d_super_rolling_ball_race",
     "nome": "3D Super Rolling Ball Race",
-    "imagem": "",
-    "linkIframe": "",
+    "imagem": "./assets/images-games/boll.jpg",
+    "linkIframe": "https://www.miniplay.com/embed/3d-super-rolling-ball-race",
     "descricao": "Corrida 3D com esfera rolante.",
     "instrucoes": "Use setas ou toque para direcionar.",
     "categoria": ["racing"]
@@ -29,8 +29,8 @@
   {
     "id": "kart_bros",
     "nome": "Kart Bros",
-    "imagem": "",
-    "linkIframe": "",
+    "imagem": "./assets/images-games/kartbros.jpg",
+    "linkIframe": "https://www.miniplay.com/embed/kart-bros",
     "descricao": "Corrida com estilo retrô de kart.",
     "instrucoes": "Setas para dirigir.",
     "categoria": ["racing", "classics"]
@@ -38,8 +38,8 @@
   {
     "id": "super_mario_kart",
     "nome": "Super Mario Kart",
-    "imagem": "",
-    "linkIframe": "",
+    "imagem": "./assets/images-games/mariokart.jpeg",
+    "linkIframe": "https://www.miniplay.com/embed/super-mario-kart",
     "descricao": "Corrida clássica com personagens da Nintendo.",
     "instrucoes": "Setas para dirigir, atalhos icônicos.",
     "categoria": ["racing", "classics"]
@@ -47,8 +47,8 @@
   {
     "id": "race_it_car_racing",
     "nome": "Race It: Car Racing",
-    "imagem": "",
-    "linkIframe": "",
+    "imagem": "./assets/images-games/race.jpeg",
+    "linkIframe": "https://www.miniplay.com/embed/race-it-car-racing",
     "descricao": "Corrida de carros rápida e cheia de ação.",
     "instrucoes": "Setas para controlar o carro.",
     "categoria": ["racing"]
@@ -56,8 +56,8 @@
   {
     "id": "tiny_racing",
     "nome": "Tiny Racing",
-    "imagem": "",
-    "linkIframe": "",
+    "imagem": "./assets/images-games/tiny.jpeg",
+    "linkIframe": "https://www.miniplay.com/embed/tiny-racing",
     "descricao": "Corrida divertida com carros pequenos.",
     "instrucoes": "Setas ou toque para dirigir.",
     "categoria": ["racing", "acao"]
@@ -65,8 +65,8 @@
   {
     "id": "italian_brainrot_bike_rush",
     "nome": "Italian Brainrot Bike Rush",
-    "imagem": "",
-    "linkIframe": "",
+    "imagem": "./assets/images-games/brainhot.jpeg",
+    "linkIframe": "https://www.miniplay.com/embed/italian-brainrot-bike-rush",
     "descricao": "Corrida de bicicleta cheia de obstáculos.",
     "instrucoes": "Setas para mover e Z para acelerar.",
     "categoria": ["twoplayer", "racing", "acao"]
@@ -74,8 +74,8 @@
   {
     "id": "moto_attack",
     "nome": "Moto Attack",
-    "imagem": "",
-    "linkIframe": "",
+    "imagem": "./assets/images-games/motoattack.jpeg",
+    "linkIframe": "https://www.miniplay.com/embed/moto-attack",
     "descricao": "Corrida de motos com desafios.",
     "instrucoes": "Setas para controlar a moto.",
     "categoria": ["racing", "acao"]
@@ -83,8 +83,8 @@
   {
     "id": "cliff_racer_cartoon_race",
     "nome": "Cliff Racer: Cartoon Race",
-    "imagem": "",
-    "linkIframe": "",
+    "imagem": "./assets/images-games/clif.jpeg",
+    "linkIframe": "https://www.miniplay.com/embed/cliff-racer-cartoon-race",
     "descricao": "Corrida cartunesca em penhascos instáveis.",
     "instrucoes": "Setas para dirigir.",
     "categoria": ["racing"]
@@ -93,7 +93,7 @@
   {
     "id": "plants_vs_zombies",
     "nome": "Plants vs Zombies",
-    "imagem": "",
+    "imagem": "./assets/images-games/plants.jpeg",
     "linkIframe": "https://www.miniplay.com/embed/plants-vs-zombies",
     "descricao": "Defenda sua casa das ondas de zumbis.",
     "instrucoes": "Clique para plantar e defender.",
@@ -102,8 +102,8 @@
   {
     "id": "retro_rally",
     "nome": "Retro Rally",
-    "imagem": "",
-    "linkIframe": "",
+    "imagem": "./assets/images-games/retro.jpeg",
+    "linkIframe": "https://www.miniplay.com/embed/retro-rally",
     "descricao": "Rally com visual retrô.",
     "instrucoes": "Setas para dirigir.",
     "categoria": ["racing", "classics"]
@@ -111,8 +111,8 @@
   {
     "id": "super_luigi_world_deluxe",
     "nome": "Super Luigi World DELUXE",
-    "imagem": "",
-    "linkIframe": "",
+    "imagem": "./assets/images-games/luigi.jpeg",
+    "linkIframe": "https://www.miniplay.com/embed/super-luigi-world-deluxe",
     "descricao": "Aventura clássica do Luigi em plataforma.",
     "instrucoes": "Setas e Z para pular.",
     "categoria": ["classics"]
@@ -120,8 +120,8 @@
   {
     "id": "sonic_hedgehog_pocket_platformer",
     "nome": "Sonic the Hedgehog: Pocket Platformer",
-    "imagem": "",
-    "linkIframe": "",
+    "imagem": "./assets/images-games/sonic.jpeg",
+    "linkIframe": "https://www.miniplay.com/embed/sonic-the-hedgehog-pocket-platformer",
     "descricao": "Sonic em versão portátil e clássica.",
     "instrucoes": "Setas para mover e Z para pular.",
     "categoria": ["classics", "acao"]
@@ -129,8 +129,8 @@
   {
     "id": "pac_man_arcade_original",
     "nome": "Pac-Man Arcade Original",
-    "imagem": "",
-    "linkIframe": "",
+    "imagem": "./assets/images-games/pacmen.jpeg",
+    "linkIframe": "https://www.miniplay.com/embed/pac-man-arcade-original",
     "descricao": "O original Pac-Man arcade.",
     "instrucoes": "Setas para mover.",
     "categoria": ["classics"]
@@ -138,8 +138,8 @@
   {
     "id": "super_pizza_quest",
     "nome": "Super Pizza Quest",
-    "imagem": "",
-    "linkIframe": "",
+    "imagem": "./assets/images-games/pizza.jpeg",
+    "linkIframe": "'https://www.miniplay.com/embed/super-pizza-quest",
     "descricao": "Plataforma/puzzle retrô estilo cartunado.",
     "instrucoes": "Setas e Z para pular.",
     "categoria": ["classics", "acao"]
@@ -147,8 +147,8 @@
   {
     "id": "bunny_rabbot_in_sonic_the_hedgehog",
     "nome": "Bunnie Rabbot in Sonic the Hedgehog",
-    "imagem": "",
-    "linkIframe": "",
+    "imagem": "./assets/images-games/bunny.webp",
+    "linkIframe": "https://www.miniplay.com/embed/bunnie-rabbot-in-sonic-the-hedgehog",
     "descricao": "Aventure-se como Bunnie Rabbot no mundo de Sonic.",
     "instrucoes": "Setas e Z para pular.",
     "categoria": ["classics"]
@@ -156,35 +156,27 @@
   {
     "id": "super_mario_runner",
     "nome": "Super Mario Runner",
-    "imagem": "",
-    "linkIframe": "",
+    "imagem": "./assets/images-games/mario.jpeg",
+    "linkIframe": "https://www.miniplay.com/embed/super-mario-runner",
     "descricao": "Mario em versão runner clássica.",
     "instrucoes": "Toque para pular.",
     "categoria": ["classics", "acao"]
   },
+  
   {
-    "id": "kart_bros", 
-    "categoria": ["classics"] 
-  },
-  {
-    "id": "pacman", 
-    "categoria": ["classics"] 
-  },
-
-  {
-    "id": "frantic_snipers",
-    "nome": "Frantic Snipers",
-    "imagem": "",
-    "linkIframe": "",
-    "descricao": "Duelistas em modo sniper.",
+    "id": "bad-ice-cream",
+    "nome": "Bad Ice-Cream",
+    "imagem": "./assets/images-games/badice.jpeg",
+    "linkIframe": "https://www.miniplay.com/embed/bad-ice-cream",
+    "descricao": "Escolha seu sabor de sorvete favorito e comece o jogo coletando todas as frutas em cada nível, enquanto desvia dos inimigos criando barreiras de cubos de gelo. Jogo para um ou dois jogadores",
     "instrucoes": "Clique para atirar, mover com setas e WASD.",
     "categoria": ["twoplayer", "acao"]
   },
   {
     "id": "basket_bros",
     "nome": "Basket Bros",
-    "imagem": "",
-    "linkIframe": "",
+    "imagem": "./assets/images-games/basketbros.jpeg",
+    "linkIframe": "https://www.miniplay.com/embed/basketbros-io",
     "descricao": "Basquete maluco para dois.",
     "instrucoes": "Setas para mover.",
     "categoria": ["twoplayer", "acao"]
@@ -192,17 +184,17 @@
   {
     "id": "fireboy_and_watergirl_forest_temple",
     "nome": "FireBoy and WaterGirl: The Forest Temple",
-    "imagem": "",
-    "linkIframe": "",
+    "imagem": "./assets/images-games/fireboy.jpeg",
+    "linkIframe": "https://www.miniplay.com/embed/fireboy-and-watergirl-the-forest-temple",
     "descricao": "Puzzle cooperativo de elementos.",
     "instrucoes": "WASD (FireBoy) e setas (WaterGirl).",
     "categoria": ["twoplayer", "acao", "classics"]
   },
   {
-    "id": "bad_ice_cream",
-    "nome": "Bad Ice-Cream",
-    "imagem": "",
-    "linkIframe": "",
+    "id": "bad_ice_cream2",
+    "nome": "Bad Ice-Cream 2",
+    "imagem": "./assets/images-games/badice2.jpeg",
+    "linkIframe": "https://www.miniplay.com/embed/bad-ice-cream-2",
     "descricao": "Colete frutas evitando inimigos.",
     "instrucoes": "Setas para mover e Z para lançar.",
     "categoria": ["twoplayer", "acao"]
@@ -210,8 +202,8 @@
   {
     "id": "geometry_vibes",
     "nome": "Geometry Vibes",
-    "imagem": "",
-    "linkIframe": "",
+    "imagem": "./assets/images-games/vibes.jpeg",
+    "linkIframe": "https://www.miniplay.com/embed/geometry-vibeshttps://www.miniplay.com/embed/geometry-vibes",
     "descricao": "Ritmo e reflexo em ação geométrica.",
     "instrucoes": "Setas para navegar.",
     "categoria": ["twoplayer", "acao"]
@@ -219,8 +211,8 @@
   {
     "id": "cuphead",
     "nome": "Cuphead",
-    "imagem": "",
-    "linkIframe": "",
+    "imagem": "./assets/images-games/cuphead.png",
+    "linkIframe": "https://www.miniplay.com/embed/cuphead",
     "descricao": "Chefes desafiantes e estética retrô.",
     "instrucoes": "Setas para mover e Z para atirar.",
     "categoria": ["acao", "classics"]
@@ -228,19 +220,19 @@
   {
     "id": "pico_park",
     "nome": "Pico Park",
-    "imagem": "",
-    "linkIframe": "",
+    "imagem": "./assets/images-games/pikopark.png",
+    "linkIframe": "https://www.miniplay.com/embed/pico-park",
     "descricao": "Puzzle cooperativo para múltiplos jogadores.",
     "instrucoes": "WASD e comandos de ação em cooperação.",
     "categoria": ["twoplayer", "classics"]
   },
   {
-    "id": "twin_snakes",
-    "nome": "Twin Snakes",
-    "imagem": "",
-    "linkIframe": "",
-    "descricao": "Versão cooperativa da clássica serpente.",
-    "instrucoes": "WASD e setas para controlar cada cobra.",
+    "id": "Italian-Brainrot-Head-Soccer",
+    "nome": "Italian Brainrot Head Soccer",
+    "imagem": "./assets/images-games/italiansoccer.jpeg",
+    "linkIframe": "https://www.miniplay.com/embed/italian-brainrot-head-soccer",
+    "descricao": "Italian Brainrot Head Soccer é um jogo de futebol tão absurdo quanto divertido, onde os jogadores controlam personagens memes em vez de esportistas convencionais. Com uma estética exagerada e partidas curtas, o jogo transforma cada partida em uma batalha caótica de um minuto, onde tudo pode acontecer!",
+    "instrucoes": "WASD ",
     "categoria": ["twoplayer", "classics"]
   }
 ]
