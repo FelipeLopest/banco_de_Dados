@@ -1,9 +1,9 @@
 [
   {
-    "id": "diesel_and_death",
-    "nome": "Diesel and Death",
-    "imagem": "./assets/images-games/Diesel.jpeg",
-    "linkIframe": "https://www.miniplay.com/embed/diesel-and-death",
+    "id": "Grand-Extreme-Racing",
+    "nome": "Grand Extreme Racing",
+    "imagem": "./assets/images-games/Grand.jpeg",
+    "linkIframe": "https://www.twoplayergames.org/embed/grand-extreme-racing",
     "descricao": "Corrida mortal: derrote seus rivais à força.",
     "instrucoes": "Acelere, colete bônus e vença.",
     "categoria": ["racing", "acao"]
