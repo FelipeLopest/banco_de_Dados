@@ -248,8 +248,55 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!jogo) { alert("Jogo não encontrado."); return; }
 
       const iframe = document.getElementById('game-frame');
-      if (iframe) iframe.src = jogo.linkIframe || jogo.link || '';
+      const gameContainer = document.querySelector('.game-container');
 
+      if (isMobile() && iframe && gameContainer) {
+        // 🔹 Cria overlay de play no mobile
+        const overlayPlay = document.createElement('div');
+        overlayPlay.style.position = "absolute";
+        overlayPlay.style.top = "0";
+        overlayPlay.style.left = "0";
+        overlayPlay.style.width = "100%";
+        overlayPlay.style.height = "33%";
+        overlayPlay.style.background = "rgba(0,0,0,0.9)";
+        overlayPlay.style.display = "flex";
+        overlayPlay.style.flexDirection = "column";
+        overlayPlay.style.alignItems = "center";
+        overlayPlay.style.justifyContent = "center";
+        overlayPlay.style.color = "#fff";
+        overlayPlay.style.zIndex = "9999";
+
+        overlayPlay.innerHTML = `
+          <img src="${jogo.imagem}" alt="${sanitizeText(jogo.nome)}" style="max-width:200px;border-radius:12px;margin-bottom:20px;">
+          <h2 style="margin-bottom:15px;">${sanitizeText(jogo.nome)}</h2>
+          <button id="play-now" style="
+            background:#28a745;
+            color:white;
+            border:none;
+            padding:12px 24px;
+            font-size:18px;
+            border-radius:8px;
+            cursor:pointer;
+          ">▶ Jogar Agora</button>
+        `;
+
+        gameContainer.style.position = "relative";
+        gameContainer.appendChild(overlayPlay);
+
+        const btnPlayNow = overlayPlay.querySelector('#play-now');
+        btnPlayNow.addEventListener('click', () => {
+          iframe.src = jogo.linkIframe || jogo.link || '';
+          overlayPlay.remove();
+          // tenta fullscreen real
+          if (iframe.requestFullscreen) iframe.requestFullscreen();
+          else if (iframe.webkitRequestFullscreen) iframe.webkitRequestFullscreen();
+          else if (iframe.msRequestFullscreen) iframe.msRequestFullscreen();
+        });
+      } else {
+        if (iframe) iframe.src = jogo.linkIframe || jogo.link || '';
+      }
+
+      // Preenche infos do jogo
       const gameTitle = document.getElementById('game-title');
       if (gameTitle) gameTitle.textContent = sanitizeText(jogo.nome) || 'Título não disponível';
 
@@ -265,6 +312,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const gameInstruction = document.getElementById('game-instruction');
       if (gameInstruction) gameInstruction.textContent = sanitizeText(jogo.instrucoes) || 'Instruções não disponíveis.';
 
+      // Relacionados
       const relatedGamesDiv = document.getElementById('related-games');
       if (relatedGamesDiv) {
         relatedGamesDiv.innerHTML = '';
@@ -295,7 +343,7 @@ document.addEventListener("DOMContentLoaded", () => {
       alert('Erro ao carregar dados do jogo.');
     });
 
-  // ======================= FULLSCREEN =======================
+  // ======================= FULLSCREEN (DESKTOP) =======================
   const btnFull = document.getElementById('btn-full');
   if (btnFull) {
     btnFull.addEventListener('click', () => {
@@ -304,15 +352,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (iframe.requestFullscreen) iframe.requestFullscreen();
       else if (iframe.webkitRequestFullscreen) iframe.webkitRequestFullscreen();
       else if (iframe.msRequestFullscreen) iframe.msRequestFullscreen();
-    });
-  }
-
-  const iframeClick = document.getElementById('game-frame');
-  if (iframeClick) {
-    iframeClick.addEventListener('click', () => {
-      if (iframeClick.requestFullscreen) iframeClick.requestFullscreen();
-      else if (iframeClick.webkitRequestFullscreen) iframeClick.webkitRequestFullscreen();
-      else if (iframeClick.msRequestFullscreen) iframeClick.msRequestFullscreen();
     });
   }
 
